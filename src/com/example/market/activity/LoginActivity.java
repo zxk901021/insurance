@@ -12,6 +12,7 @@ import com.android.volley.VolleyError;
 import com.example.bmob.signup.JDUser;
 import com.example.bmob.signup.SignUpActivity;
 import com.example.market.R;
+import com.example.market.utils.Constants;
 import com.lib.volley.HTTPUtils;
 import com.lib.volley.VolleyListener;
 import com.sina.weibo.sdk.auth.AuthInfo;
@@ -162,6 +163,47 @@ public class LoginActivity extends Activity implements OnClickListener,
 		mTgBtnShowPsw = (ToggleButton) findViewById(R.id.tgbtn_show_psw);
 	}
 
+	public void logInsurance(){
+		String username = mEditUid.getText().toString();
+		String password = mEditPsw.getText().toString();
+		if (TextUtils.isEmpty(username)) {
+			Toast.makeText(LoginActivity.this, "用户名为空！", Toast.LENGTH_SHORT).show();
+			return;
+		}
+		if (TextUtils.isEmpty(password)) {
+			Toast.makeText(LoginActivity.this, "密码为空！", Toast.LENGTH_SHORT).show();
+			return;
+		}
+		HTTPUtils.getVolley(LoginActivity.this, 
+				Constants.INTENT_KEY.INSURANCE_LOGIN + "username=" + username + "&pwd=" + password, 
+				new VolleyListener() {
+			
+			@Override
+			public void onErrorResponse(VolleyError error) {
+				Toast.makeText(LoginActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+			}
+			
+			@Override
+			public void onResponse(String response) {
+				try {
+					JSONObject object = new JSONObject(response);
+					String result = object.getString("code");
+					if (result.equals("001")) {
+						Toast.makeText(LoginActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
+						SharedPreferences sp = getSharedPreferences(
+								"MyPrefer", Context.MODE_PRIVATE);
+						Editor ed = sp.edit();
+						ed.putBoolean("isLogin", true);
+						ed.commit();
+						finish();
+					}
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
