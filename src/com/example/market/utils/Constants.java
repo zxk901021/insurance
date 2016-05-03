@@ -21,6 +21,10 @@ public class Constants {
 		public static final String LOGIN_BMOB_SUCCESS = "bmob_success";
 		/** ×¢Ïú */
 		public static final String LOGOUT = "logout";
+		
+		public static final String INSURANCE_REGISTER = "http://www.yiyingjie.com/InsuranceInterface/user_registration.php?";
+	
+		public static final String INSURANCE_LOGIN = "http://www.yiyingjie.com/InsuranceInterface/user_login.php?";
 	}
 
 	public static final class BROADCAST_FILTER {
