@@ -1,0 +1,350 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_bg" >
+
+    <TextView
+        android:id="@+id/company_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="悠兼职"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/title_size" />
+
+    <View
+        android:id="@+id/company_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:layout_below="@id/company_title"
+        android:layout_marginTop="10dp"
+        android:background="@color/line_color" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/company_line"
+        android:background="@color/white_bg"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/company_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="账户名称或企业名称"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/large_text" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/company_name"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/company_cert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/company_icon1_1" />
+
+                    <ImageView
+                        android:id="@+id/company_cx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/company_icon2_1" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/arrows" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:background="@color/line_color" />
+
+            <RelativeLayout
+                android:id="@+id/company_release_parttime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_selected"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp" >
+
+                <ImageView
+                    android:id="@+id/release_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/company_icon3" />
+
+                <TextView
+                    android:id="@+id/release_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/release_img"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/release_img"
+                    android:text="发布兼职"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/large_text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/release_text"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/release_img"
+                    android:text="Release of Part-time"
+                    android:textColor="@color/detail_second_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/arrows" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:background="@color/line_color" />
+
+            <RelativeLayout
+                android:id="@+id/apply_authentication"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_selected"
+                android:orientation="horizontal"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp" >
+
+                <ImageView
+                    android:id="@+id/apply_auth_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/company_icon4" />
+
+                <TextView
+                    android:id="@+id/apply_auth_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/apply_auth_img"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/apply_auth_img"
+                    android:text="申请认证"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/large_text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/apply_auth_text"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/apply_auth_img"
+                    android:text="To apply for certification"
+                    android:textColor="@color/detail_second_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/arrows" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:background="@color/line_color" />
+
+            <RelativeLayout
+                android:id="@+id/admin_job_station"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_selected"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp" >
+
+                <ImageView
+                    android:id="@+id/admin_job_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/company_icon5" />
+
+                <TextView
+                    android:id="@+id/admin_job_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/admin_job_img"
+                    android:text="岗位管理"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/large_text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/admin_job_text"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/admin_job_img"
+                    android:text="Part time job management"
+                    android:textColor="@color/detail_second_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/arrows" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:background="@color/line_color" />
+
+            <RelativeLayout
+                android:id="@+id/company_integrity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_selected"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp" >
+
+                <ImageView
+                    android:id="@+id/integrity_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/company_icon6" />
+
+                <TextView
+                    android:id="@+id/integrity_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/integrity_img"
+                    android:text="诚信档案"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/large_text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/integrity_text"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/integrity_img"
+                    android:text="The integrity of the files"
+                    android:textColor="@color/detail_second_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/arrows" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:background="@color/line_color" />
+
+            <RelativeLayout
+                android:id="@+id/company_my_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_selected"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp" >
+
+                <ImageView
+                    android:id="@+id/company_msg_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/company_icon7" />
+
+                <TextView
+                    android:id="@+id/company_msg_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/company_msg_img"
+                    android:text="我的消息"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/large_text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/company_msg_text"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/company_msg_img"
+                    android:text="My message"
+                    android:textColor="@color/detail_second_text" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/arrows" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:background="@color/line_color" />
+
+            <Button
+                android:id="@+id/back_to_login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:layout_margin="25dp"
+                android:background="@drawable/yellow_btn_shape"
+                android:text="退出登录"
+                android:textColor="@color/white_bg"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

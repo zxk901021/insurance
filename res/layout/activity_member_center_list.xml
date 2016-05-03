@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/member_list_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/title_bg" >
+
+        <ImageView
+            android:id="@+id/member_info_list_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="14dp"
+            android:paddingRight="10dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/member_info_list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="收货地址"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium_text_size" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/member_info_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/member_list_bottom"
+        android:layout_below="@+id/member_list_title" >
+    </ListView>
+    
+    
+    <com.zhy_9.shopping_mall.widget.InternalGridView 
+        android:id="@+id/member_info_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:horizontalSpacing="5dp"
+        android:numColumns="2"
+        android:verticalSpacing="5dp"
+        android:layout_below="@+id/member_list_title"
+        android:listSelector="#00000000"
+        android:background="#ebeced"
+        android:padding="5dp"
+        android:visibility="gone">
+        
+    </com.zhy_9.shopping_mall.widget.InternalGridView>
+
+    <RelativeLayout
+        android:id="@+id/member_list_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_alignParentBottom="true"
+        android:background="#e6e2e4"
+        android:gravity="center"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/add_new_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/corner_btn"
+            android:text="+新建地址"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_medium_text_size" />
+    </RelativeLayout>
+
+</RelativeLayout>

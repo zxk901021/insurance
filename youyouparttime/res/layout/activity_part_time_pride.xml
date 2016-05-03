@@ -1,0 +1,382 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingBottom="15dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/part_pride_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp" >
+
+                <include layout="@layout/back_btn_layout" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="我兼职我骄傲"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/title_size" />
+
+            <View
+                android:id="@+id/part_pride_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:layout_below="@id/part_pride_back"
+                android:layout_marginTop="10dp"
+                android:background="@color/line_color" />
+
+            <RelativeLayout
+                android:id="@+id/zili_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/part_pride_line" >
+
+                <ImageView
+                    android:id="@+id/pride_image1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/zili_star1" />
+
+                <TextView
+                    android:id="@+id/pride_text_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/pride_image1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/pride_image1"
+                    android:text="自强之星"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/title_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/pride_text_content"
+                    android:layout_below="@id/pride_text_content"
+                    android:textColor="@color/detail_second_text"
+                    android:text="The Star of Self-improvement" />
+
+                <ImageView
+                    android:id="@+id/pride_img1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/icon" />
+
+                <View
+                    android:id="@+id/part_pride_line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/pride_image1"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/pride_text_content_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/zili_layout"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:lineSpacingMultiplier="1.5"
+                android:textColor="@color/text_color"
+                android:visibility="gone" />
+            
+            <TextView 
+                android:id="@+id/pride_text_content_sum_rewards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pride_text_content_detail"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/list_text"
+                android:text="当前已确认金额："
+                android:visibility="gone"/>
+            
+            <TextView 
+                android:id="@+id/pride_text_content_sum_rewards_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pride_text_content_detail"
+                android:layout_toRightOf="@id/pride_text_content_sum_rewards"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/list_text"
+                android:visibility="gone"/>
+            
+
+            <Button
+                android:id="@+id/light_up_zili_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:layout_below="@id/pride_text_content_sum_rewards"
+                android:layout_margin="15dp"
+                android:background="@drawable/yellow_btn_shape"
+                android:text="立即点亮"
+                android:textColor="@color/white_bg"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/thankful_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/light_up_zili_btn" >
+
+                <ImageView
+                    android:id="@+id/thankful_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/thanks_parent" />
+
+                <TextView
+                    android:id="@+id/thankful_text_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/thankful_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/thankful_image"
+                    android:text="感恩之星之父母"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/title_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/thankful_text_content"
+                    android:layout_below="@id/thankful_text_content"
+                    android:textColor="@color/detail_second_text"
+                    android:text="Thanksgiving Parents" />
+
+                <ImageView
+                    android:id="@+id/pride_img2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/icon" />
+
+                <View
+                    android:id="@+id/thankful_line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/thankful_image"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/thankful_text_content_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/thankful_layout"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:lineSpacingMultiplier="1.5"
+                android:textColor="@color/text_color"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/light_up_thankful_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:layout_below="@id/thankful_text_content_detail"
+                android:layout_margin="15dp"
+                android:background="@drawable/yellow_btn_shape"
+                android:text="立即点亮"
+                android:textColor="@color/white_bg"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/thankful_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/light_up_thankful_btn" >
+
+                <ImageView
+                    android:id="@+id/thankful_image2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/thanks_society" />
+
+                <TextView
+                    android:id="@+id/thankful_text_content2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/thankful_image2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/thankful_image2"
+                    android:text="感恩之星之社会"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/title_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/thankful_text_content2"
+                    android:layout_below="@id/thankful_text_content2"
+                    android:textColor="@color/detail_second_text"
+                    android:text="Thanksgiving Society" />
+
+                <ImageView
+                    android:id="@+id/pride_img3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/icon" />
+
+                <View
+                    android:id="@+id/thankful_line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/thankful_image2"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/thankful_text_content_detail2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/thankful_layout2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:lineSpacingMultiplier="1.5"
+                android:textColor="@color/text_color"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/light_up_thankful_btn2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:layout_below="@id/thankful_text_content_detail2"
+                android:layout_margin="15dp"
+                android:background="@drawable/yellow_btn_shape"
+                android:text="立即点亮"
+                android:textColor="@color/white_bg"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/integrity_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/light_up_thankful_btn2" >
+
+                <ImageView
+                    android:id="@+id/integrity_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/integrity" />
+
+                <TextView
+                    android:id="@+id/integrity_text_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/integrity_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@id/integrity_image"
+                    android:text="诚信之星"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/title_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/integrity_text_content"
+                    android:layout_below="@id/integrity_text_content"
+                    android:textColor="@color/detail_second_text"
+                    android:text="The Star of The Good Faith" />
+
+                <ImageView
+                    android:id="@+id/pride_img4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/icon" />
+
+                <View
+                    android:id="@+id/integrity_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/integrity_image"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/integrity_text_content_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/integrity_layout"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:lineSpacingMultiplier="1.5"
+                android:textColor="@color/text_color"
+                android:visibility="gone" />
+            <LinearLayout 
+                android:id="@+id/integrity_btn_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:layout_below="@id/integrity_text_content_detail">
+                <Button
+                android:id="@+id/light_up_integrity_btn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/btn_height"
+                android:layout_weight="1"
+                android:background="@drawable/yellow_btn_shape"
+                android:text="立即点亮"
+                android:textColor="@color/white_bg"/>
+            
+            <Button 
+                android:id="@+id/check_integrity_list"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/btn_height"
+                android:layout_weight="1"
+                android:background="@drawable/yellow_btn_shape"
+                android:text="查看诚信记录"
+                android:textColor="@color/white_bg"
+                android:layout_marginLeft="20dp"/>
+                
+            </LinearLayout>
+
+            
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

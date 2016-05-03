@@ -1,0 +1,106 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_bg" >
+
+    <LinearLayout
+        android:id="@+id/height_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp" >
+
+        <include layout="@layout/back_btn_layout" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="身高"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/title_size" />
+    
+    <View 
+        android:id="@+id/height_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line"
+        android:background="@color/yellow"
+        android:layout_below="@id/height_back"/>
+    
+    <RelativeLayout 
+        android:id="@+id/height_edt_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/height_line"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/white_bg">
+        
+        <TextView 
+            android:id="@+id/height_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="身高（cm）"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/list_text"
+            android:layout_margin="15dp"
+            android:drawableRight="@drawable/h_midline"
+            android:gravity="center_vertical"/>
+        
+        <EditText 
+            android:id="@+id/height_edt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/height_text1"
+            android:layout_marginLeft="20dp"
+            android:inputType="number"
+            android:maxLength="3"
+            android:drawableBottom="@drawable/bottom_line"
+            android:background="@null"
+            android:layout_centerVertical="true"/>
+        
+        <TextView 
+            android:id="@+id/height_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/height_edt1"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:text="~"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/list_text"/>
+        
+         <EditText 
+            android:id="@+id/height_edt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/height_text2"
+            android:layout_marginLeft="20dp"
+            android:inputType="number"
+            android:maxLength="3"
+            android:drawableBottom="@drawable/bottom_line"
+            android:background="@null"
+            android:layout_centerVertical="true"/>
+        
+    </RelativeLayout>
+    
+    <Button 
+        android:id="@+id/submit_height"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:text="提交"
+        android:textColor="@color/white_bg"
+        android:background="@drawable/yellow_btn_shape"
+        android:layout_below="@id/height_edt_layout"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>

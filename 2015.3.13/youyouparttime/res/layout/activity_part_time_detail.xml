@@ -1,0 +1,802 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_bg" >
+
+    <LinearLayout
+        android:id="@+id/part_time_detail_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp" >
+
+        <include layout="@layout/back_btn_layout" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/part_time_detail_back"
+        android:layout_alignParentTop="true"
+        android:layout_alignTop="@id/part_time_detail_back"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/part_time_detail"
+        android:textColor="@color/detail_text_color"
+        android:textSize="@dimen/title_size" />
+
+    <ImageView
+        android:id="@+id/collect_job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
+        android:layout_alignTop="@id/part_time_detail_back"
+        android:layout_alignBottom="@id/part_time_detail_back"
+        android:src="@drawable/no_collect"
+        android:layout_marginTop="10dp" />
+    <TextView 
+        android:id="@+id/detail_reset_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/part_time_detail_back"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
+        android:text="重新编辑"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/list_text"
+        android:layout_marginTop="10dp"
+        android:gravity="bottom"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/detail_line1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:layout_below="@id/part_time_detail_back"
+        android:background="@color/grey_bg" />
+
+    <View
+        android:id="@+id/detail_line2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line"
+        android:layout_below="@id/detail_line1"
+        android:background="@color/yellow" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/detail_bottom_menu"
+        android:layout_below="@id/detail_line2"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white_bg"
+                android:paddingBottom="5dp" >
+
+                <TextView
+                    android:id="@+id/job_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/yellow"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/job_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/job_name"
+                    android:layout_toRightOf="@id/job_name" />
+
+                <TextView
+                    android:id="@+id/detail_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/job_name"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:drawableLeft="@drawable/time_icon"
+                    android:drawablePadding="2dp" />
+
+                <TextView
+                    android:id="@+id/detail_focus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/detail_time"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/detail_time"
+                    android:drawableLeft="@drawable/look_1"
+                    android:drawablePadding="2dp" />
+
+                <Button
+                    android:id="@+id/check_resumes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/btn_short_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/job_name"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/small_yellow_btn_shape"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="查看收到的简历"
+                    android:textColor="@color/white_bg"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/white_bg"
+                android:paddingBottom="5dp" >
+
+                <TextView
+                    android:id="@+id/detail_part_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/job_type"
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/detail_part_type_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/detail_part_type"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/detail_part_type"
+                    android:text=""
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/detail_part_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_part_type"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/job_company"
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/detail_part_company_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/detail_part_company"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/detail_part_company"
+                    android:text=""
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/detail_part_people_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_part_company"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/job_people_count"
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/detail_part_people_count_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/detail_part_people_count"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/detail_part_people_count"
+                    android:text=""
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/detail_part_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_part_people_count"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/job_pay"
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/detail_part_pay_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/detail_part_pay"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/detail_part_pay"
+                    android:text=""
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/detail_part_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_part_pay"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/job_time"
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/detail_part_time_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/detail_part_time"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/detail_part_time"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text"
+                    android:visibility="gone" />
+                <ImageView 
+                    android:id="@+id/detail_part_time_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/detail_part_time"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/detail_part_time"
+                    android:src="@drawable/date"/>
+
+                <TextView
+                    android:id="@+id/detail_part_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_part_time"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/job_area"
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/detail_part_area_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/detail_part_area"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/detail_part_area"
+                    android:text=""
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+                
+                
+                <TextView
+                    android:id="@+id/detail_part_area_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_part_area"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="兼职地点："
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/detail_part_area_content_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/detail_part_area_detail"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/detail_part_area_detail"
+                    android:text=""
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+                
+                
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/white_bg"
+                android:paddingBottom="5dp" >
+
+                <TextView
+                    android:id="@+id/detail_job_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/job_content"
+                    android:textColor="@color/yellow"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/detail_job_content_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_job_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/white_bg"
+                android:paddingBottom="5dp" >
+
+                <TextView
+                    android:id="@+id/company_introduce"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/company_intro"
+                    android:textColor="@color/yellow"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/integrity_record"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/btn_short_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/small_yellow_btn_shape"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="查看诚信记录"
+                    android:textColor="@color/white_bg" />
+
+                <TextView
+                    android:id="@+id/company_intro_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/integrity_record"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingMultiplier="1.5"
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/company_person_charge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/company_intro_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/company_person"
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/company_person_charge_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/company_person_charge"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/company_person_charge"
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/company_person_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/company_person_charge"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/company_phone"
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/company_person_phone_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/company_person_phone"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/company_person_phone"
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/company_person_adress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/company_person_phone"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/company_address"
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/company_person_adress_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/company_person_adress"
+                    android:layout_toRightOf="@id/company_person_adress"
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text"
+                    android:layout_toLeftOf="@+id/see_more"
+                    android:visibility="gone" 
+                    android:drawableRight="@drawable/adress_icon"
+                    android:drawablePadding="2dp"/>
+                
+
+                <Button
+                    android:id="@+id/see_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/btn_short_height"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/company_intro_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/small_yellow_btn_shape"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="查看更多"
+                    android:textColor="@color/white_bg" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/white_bg"
+                android:paddingBottom="5dp" >
+
+                <TextView
+                    android:id="@+id/contact_person"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/contact_person"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/contact_person_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/contact_person"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/contact_person"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/contact_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/contact_person"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/contact_phone"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/contact_phone_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/contact_phone"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/contact_phone"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/small_text" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/white_bg"
+                android:paddingBottom="5dp" >
+
+                <TextView
+                    android:id="@+id/detail_warn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/tips"
+                    android:textColor="@color/yellow"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/detail_tips"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_warn"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/detail_text_color"
+                    android:textSize="@dimen/small_text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/detail_comment_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/white_bg"
+                android:paddingBottom="15dp" >
+
+                <LinearLayout
+                    android:id="@+id/detail_content_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/detail_content_good"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:text="好（）"
+                        android:textColor="@color/yellow"
+                        android:textSize="@dimen/small_text"
+                        android:gravity="center_horizontal" />
+
+                    <TextView
+                        android:id="@+id/detail_content_normal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:text="一般（）"
+                        android:textColor="@color/yellow"
+                        android:textSize="@dimen/small_text"
+                        android:gravity="center_horizontal" />
+
+                    <TextView
+                        android:id="@+id/detail_content_bad"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:text="差（）"
+                        android:textColor="@color/yellow"
+                        android:textSize="@dimen/small_text"
+                        android:gravity="center_horizontal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/detail_content_user_layout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_content_layout"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/detail_content_user1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/yellow"
+                        android:textSize="@dimen/small_text" />
+
+                    <TextView
+                        android:id="@+id/detail_content_user1_content"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textColor="@color/detail_text_color"
+                        android:textSize="@dimen/small_text" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/detail_comment_line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/detail_content_user_layout1"
+                    android:background="@color/line_color" />
+
+                <LinearLayout
+                    android:id="@+id/detail_content_user_layout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_comment_line1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/detail_content_user2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/yellow"
+                        android:textSize="@dimen/small_text" />
+
+                    <TextView
+                        android:id="@+id/detail_content_user2_content"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textColor="@color/detail_text_color"
+                        android:textSize="@dimen/small_text" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/detail_comment_line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/detail_content_user_layout2"
+                    android:background="@color/line_color" />
+
+                <LinearLayout
+                    android:id="@+id/detail_content_user_layout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_comment_line2"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/detail_content_user3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/yellow"
+                        android:textSize="@dimen/small_text" />
+
+                    <TextView
+                        android:id="@+id/detail_content_user3_content"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textColor="@color/detail_text_color"
+                        android:textSize="@dimen/small_text" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/publish_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_height"
+                    android:layout_below="@id/detail_content_user_layout3"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/yellow_btn_shape"
+                    android:text="发表评论"
+                    android:textColor="@color/white_bg" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:layout_above="@+id/detail_bottom_menu"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:id="@+id/detail_bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/detail_share_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/detail_img1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/share" />
+
+            <TextView
+                android:id="@+id/detail_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="分享"
+                android:textColor="#666666" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/detail_complain_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/detail_img2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/complain" />
+
+            <TextView
+                android:id="@+id/detail_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="投诉"
+                android:textColor="#666666" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/detail_contact_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/detail_img3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/contact" />
+
+            <TextView
+                android:id="@+id/detail_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="联系"
+                android:textColor="#666666" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

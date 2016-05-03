@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height_middle"
+        android:background="@drawable/purple" />
+
+    <TextView
+        android:id="@+id/home_page_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="20dp"
+        android:text="职场纵横"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/red"
+        android:textSize="@dimen/small_middle_text_size" />
+
+    <TextView
+        android:id="@+id/home_page_help_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/home_page_help"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/home_page_help"
+        android:layout_marginRight="6dp"
+        android:text="更多"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_middle_text_size" />
+
+    <View
+        android:id="@+id/line_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/home_page_help"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray" />
+    <LinearLayout 
+        android:id="@+id/home_job"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/line_view"
+        android:padding="6dp">
+        
+        <ImageView 
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            
+            android:src="@drawable/jingwai"/>
+        <TextView 
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:text="平安境外工作保险 性价比高的境外工作保险"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:layout_weight="3"
+            android:textColor="#000000"/>
+    </LinearLayout>
+
+    <LinearLayout 
+        android:id="@+id/home_job_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/home_job"
+        android:padding="6dp">
+        
+        <ImageView 
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            
+            android:src="@drawable/jingwai2"/>
+        <TextView 
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:text="工作也会暗藏危险　买份意外险作保障"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:layout_weight="3"
+            android:textColor="#000000"/>
+    </LinearLayout>
+
+    <com.zhy_9.shopping_mall.widget.InternalListView
+        android:id="@+id/help_center_item_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_below="@id/line_view"
+        android:layout_marginTop="5dp"
+        android:divider="@null"
+        android:listSelector="#00000000" />
+
+</RelativeLayout>

@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:paddingBottom="25dp" >
+
+    <ImageView
+        android:id="@+id/welcome_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/welcome_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/youyouologo" />
+
+    <ImageView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/welcome_text" />
+
+    <ImageView
+        android:id="@+id/a"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:visibility="invisible" >
+
+        <Button
+            android:id="@+id/seek_part_time"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_higher_height"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape"
+            android:text="@string/seek_part_time"
+            android:textColor="@color/white_bg"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/hire_part_time"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_higher_height"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape"
+            android:text="@string/hire_part_time"
+            android:textColor="@color/white_bg"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</RelativeLayout>

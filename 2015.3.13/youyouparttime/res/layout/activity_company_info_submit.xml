@@ -1,0 +1,360 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg" >
+
+    <LinearLayout
+        android:id="@+id/submit_company_info_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp" >
+
+        <include layout="@layout/back_btn_layout" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="企业资料"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/title_size" />
+
+    <View
+        android:id="@+id/submit_line1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line"
+        android:layout_below="@id/submit_company_info_back"
+        android:background="@color/yellow" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/submit_line1"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/company_name_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:ems="4"
+                    android:gravity="left"
+                    android:text="企业名称"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/list_text" />
+
+                <ImageView
+                    android:id="@+id/company_info_vertical_line1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/company_name_text"
+                    android:src="@drawable/h_midline" />
+
+                <EditText
+                    android:id="@+id/company_edit_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/company_info_vertical_line1"
+                    android:background="@null"
+                    android:hint="企业名称或校园团队名称"
+                    android:singleLine="true"
+                    android:textSize="@dimen/list_text" />
+                <TextView 
+                    android:id="@+id/company_edit_name_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/company_info_vertical_line1"
+                    android:textSize="@dimen/list_text"
+                    android:visibility="gone"
+                    android:textColor="@color/text_color"/>
+
+                <View
+                    android:id="@+id/submit_line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/company_name_text"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/company_incharge_person"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:ems="4"
+                    android:gravity="left"
+                    android:text="责任人"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/list_text" />
+
+                <ImageView
+                    android:id="@+id/company_info_vertical_line2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/company_incharge_person"
+                    android:src="@drawable/h_midline" />
+
+                <EditText
+                    android:id="@+id/company_edit_incharge_person"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/company_info_vertical_line2"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textSize="@dimen/list_text" />
+                <TextView 
+                    android:id="@+id/company_edit_incharge_person_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/company_info_vertical_line2"
+                    android:textSize="@dimen/list_text"
+                    android:visibility="gone"
+                    android:textColor="@color/text_color"/>
+
+                <View
+                    android:id="@+id/submit_line3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/company_incharge_person"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/company_contact_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:ems="4"
+                    android:gravity="left"
+                    android:text="联系电话"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/list_text" />
+
+                <ImageView
+                    android:id="@+id/company_info_vertical_line3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/company_contact_phone"
+                    android:src="@drawable/h_midline" />
+
+                <TextView
+                    android:id="@+id/company_edit_contact_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/company_info_vertical_line3"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/list_text" />
+
+                <View
+                    android:id="@+id/submit_line4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/company_contact_phone"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/company_contact_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:ems="4"
+                    android:gravity="left"
+                    android:text="邮箱"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/list_text" />
+
+                <ImageView
+                    android:id="@+id/company_info_vertical_line4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/company_contact_email"
+                    android:src="@drawable/h_midline" />
+
+                <EditText
+                    android:id="@+id/company_edit_contact_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/company_info_vertical_line4"
+                    android:background="@null"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    android:textSize="@dimen/list_text" />
+                <TextView 
+                    android:id="@+id/company_edit_contact_email_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/company_info_vertical_line4"
+                    android:textSize="@dimen/list_text"
+                    android:visibility="gone"
+                    android:textColor="@color/text_color"/>
+
+                <View
+                    android:id="@+id/submit_line5"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/company_contact_email"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/company_contact_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:ems="4"
+                    android:gravity="left"
+                    android:text="地址"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/list_text" />
+
+                <ImageView
+                    android:id="@+id/company_info_vertical_line5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/company_contact_address"
+                    android:src="@drawable/h_midline" />
+
+                <EditText
+                    android:id="@+id/company_edit_contact_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/company_info_vertical_line5"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textSize="@dimen/list_text" />
+                 <TextView 
+                    android:id="@+id/company_edit_contact_address_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/company_info_vertical_line5"
+                    android:textSize="@dimen/list_text"
+                    android:visibility="gone"
+                    android:textColor="@color/text_color"/>
+
+                <View
+                    android:id="@+id/submit_line6"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/company_contact_address"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp" >
+
+                <TextView
+                    android:id="@+id/company_intro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:ems="4"
+                    android:gravity="left"
+                    android:text="企业简介"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/list_text" />
+
+                <EditText
+                    android:id="@+id/company_edit_intro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/company_intro"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@null"
+                    android:hint="请填写您的企业简介或校园团队简介，不少于30字"
+                    android:textSize="@dimen/list_text" />
+                <TextView 
+                    android:id="@+id/company_edit_intro_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/company_intro"
+                    android:textSize="@dimen/list_text"
+                    android:visibility="gone"
+                    android:textColor="@color/text_color"/>
+
+                
+            </RelativeLayout>
+			<View
+                    android:id="@+id/submit_line7"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:background="@color/line_color" />
+            <Button
+                android:id="@+id/submit_company_info"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/yellow_btn_shape"
+                android:text="提交资料"
+                android:textColor="@color/white_bg" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

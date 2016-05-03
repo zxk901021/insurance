@@ -1,0 +1,292 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg" >
+
+    <TextView 
+        android:id="@+id/safety_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:drawableLeft="@drawable/return_bg"
+        android:textColor="@color/yellow"
+        android:text="@string/back"
+        android:textSize="15sp"
+        android:gravity="center_vertical"
+        android:drawablePadding="3dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="我兼职我安全"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/title_size" />
+
+    <View
+        android:id="@+id/safety_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:layout_below="@id/safety_back"
+        android:layout_marginTop="10dp"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/add_vip_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/safety_line" >
+
+        <ImageView
+            android:id="@+id/safety_image1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:src="@drawable/approve" />
+
+        <TextView
+            android:id="@+id/safety_text_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/safety_image1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/safety_image1"
+            android:text="加V认证"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/safety_text_content"
+            android:layout_below="@id/safety_text_content"
+            android:textColor="@color/detail_second_text"
+            android:text="Add V Certification" />
+
+        <ImageView
+            android:id="@+id/safety_img1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/arrows" />
+
+        <View
+            android:id="@+id/safety_pride_line1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/short_line"
+            android:layout_below="@id/safety_image1"
+            android:background="@color/line_color" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/safety_lecture_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/add_vip_layout" >
+
+        <ImageView
+            android:id="@+id/safety_lecture_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:src="@drawable/classroom" />
+
+        <TextView
+            android:id="@+id/safety_lecture_text_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/safety_lecture_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/safety_lecture_image"
+            android:text="兼职安全讲堂"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/safety_lecture_text_content"
+            android:layout_below="@id/safety_lecture_text_content"
+            android:textColor="@color/detail_second_text"
+            android:text="Part-time Security Hall" />
+
+        <ImageView
+            android:id="@+id/safety_lecture_img2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/arrows" />
+
+        <View
+            android:id="@+id/safety_lecture_line1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/short_line"
+            android:layout_below="@id/safety_lecture_image"
+            android:background="@color/line_color" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/safety_lecture_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/safety_lecture_layout" >
+
+        <ImageView
+            android:id="@+id/safety_lecture_image2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:src="@drawable/law" />
+
+        <TextView
+            android:id="@+id/safety_lecture_text_content2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/safety_lecture_image2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/safety_lecture_image2"
+            android:text="法律援助 "
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/safety_lecture_text_content2"
+            android:layout_below="@id/safety_lecture_text_content2"
+            android:textColor="@color/detail_second_text"
+            android:text="Legal Aid" />
+
+        <ImageView
+            android:id="@+id/safety_lecture_img3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/arrows" />
+
+        <View
+            android:id="@+id/safety_lecture_line2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/short_line"
+            android:layout_below="@id/safety_lecture_image2"
+            android:background="@color/line_color" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/commercial_insurance_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/safety_lecture_layout2" >
+
+        <ImageView
+            android:id="@+id/commercial_insurance_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:src="@drawable/insurance" />
+
+        <TextView
+            android:id="@+id/commercial_insurance_text_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/commercial_insurance_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/commercial_insurance_image"
+            android:text="商业保险"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/commercial_insurance_text_content"
+            android:layout_below="@id/commercial_insurance_text_content"
+            android:textColor="@color/detail_second_text"
+            android:text="Commerial Insurance" />
+
+        <ImageView
+            android:id="@+id/commercial_insurance_img4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/arrows" />
+
+        <View
+            android:id="@+id/commercial_insurance_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/short_line"
+            android:layout_below="@id/commercial_insurance_image"
+            android:background="@color/line_color" />
+    </RelativeLayout>
+
+    
+    <RelativeLayout
+        android:id="@+id/compensation_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/commercial_insurance_layout" >
+
+        <ImageView
+            android:id="@+id/compensation_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:src="@drawable/compensate" />
+
+        <TextView
+            android:id="@+id/compensation_text_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/compensation_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/compensation_image"
+            android:text="先行赔付"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/title_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/compensation_text_content"
+            android:layout_below="@id/compensation_text_content"
+            android:textColor="@color/detail_second_text"
+            android:text="Compensation In Advance" />
+
+        <ImageView
+            android:id="@+id/compensation_img4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/arrows" />
+
+        <View
+            android:id="@+id/compensation_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/short_line"
+            android:layout_below="@id/compensation_image"
+            android:background="@color/line_color" />
+    </RelativeLayout>
+    
+
+</RelativeLayout>

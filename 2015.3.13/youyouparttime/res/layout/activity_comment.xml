@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_bg" >
+
+    <LinearLayout
+        android:id="@+id/comment_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp" >
+
+        <include layout="@layout/back_btn_layout" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/comment_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/title_size" />
+
+    <TextView
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/list_text" />
+
+    <View
+        android:id="@+id/comment_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line"
+        android:layout_below="@id/submit"
+        android:layout_marginTop="15dp"
+        android:background="@color/yellow" />
+
+    <ScrollView
+        android:id="@+id/comment_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/comment_line"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white_bg" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp" >
+
+            <EditText
+                android:id="@+id/comment_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@null"
+                android:text="这是评论内容" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="15dp"
+                android:text="128字"
+                android:textColor="@color/yellow" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/comment_check_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comment_scroll"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp" >
+
+        <RadioGroup 
+            android:id="@+id/comment_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+            android:id="@+id/comment_good"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="好"
+            android:textColor="@color/text_color" />
+
+        <RadioButton
+            android:id="@+id/comment_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/comment_good"
+            android:text="一般"
+            android:textColor="@color/text_color"
+            android:layout_marginLeft="10dp" />
+
+        <RadioButton
+            android:id="@+id/comment_bad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/comment_normal"
+            android:text="差"
+            android:textColor="@color/text_color"
+            android:layout_marginLeft="10dp" />
+        </RadioGroup>
+        
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/comment_warn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comment_scroll"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/warn"
+        android:visibility="gone" 
+        android:textColor="@color/text_color"
+        android:textSize="14sp	"/>
+
+</RelativeLayout>

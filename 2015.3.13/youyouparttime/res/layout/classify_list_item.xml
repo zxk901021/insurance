@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/classify_list_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/cuxiao" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/classify_list_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="大学城手机软件推销员"
+                android:textSize="@dimen/small_text"
+                android:textColor="@color/text_color" />
+
+            <ImageView
+                android:id="@+id/classify_vip_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/vip_logo"
+                android:layout_marginLeft="5dp" />
+
+            <ImageView
+                android:id="@+id/classify_hot_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/hot_logo"
+                android:layout_marginLeft="5dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:orientation="horizontal">
+
+          
+          
+
+
+                <TextView
+                    android:id="@+id/classify_list_address"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textSize="@dimen/small_text"
+                    android:drawableLeft="@drawable/place_icon"
+                    android:drawablePadding="3dp"
+                    android:textColor="@color/detail_second_text"/>
+           
+
+            
+
+               
+
+                <TextView
+                    android:id="@+id/classify_list_time"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:singleLine="true"
+                    android:textSize="@dimen/small_text"
+                    android:drawableLeft="@drawable/time_icon"
+                    android:drawablePadding="3dp"
+                    android:textColor="@color/detail_second_text" />
+          
+           
+
+               
+                <TextView
+                    android:id="@+id/classify_list_focus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:textSize="@dimen/small_text"
+                    android:drawableLeft="@drawable/click_num_icon"
+                    android:drawablePadding="3dp"
+                    android:textColor="@color/detail_second_text" />
+           
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

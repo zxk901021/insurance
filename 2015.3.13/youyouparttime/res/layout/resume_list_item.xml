@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res/cn.com.youyouparttime">
+
+    <CheckBox
+        android:id="@+id/resume_list_is_selected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <cn.com.youyouparttime.view.CircleImageView
+        android:id="@+id/resume_list_photo"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@id/resume_list_is_selected"
+        android:src="@drawable/applogo"
+        app:border_width="2dp"
+        app:border_color="@color/white_bg" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/resume_list_photo"
+        android:orientation="vertical"
+        android:layout_toLeftOf="@+id/resume_list_right_layout" >
+
+        <TextView
+            android:id="@+id/resume_list_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="啊啊啊"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/list_text" />
+
+        <TextView
+            android:id="@+id/resume_list_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/resume_list_name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="啊啊啊"
+            android:textColor="@color/detail_second_text"
+            android:textSize="@dimen/small_text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/resume_list_right_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" 
+        android:layout_marginRight="10dp"
+        android:gravity="right">
+
+        <TextView
+            android:id="@+id/resume_list_school"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="啊啊啊"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/list_text" />
+
+        <TextView
+            android:id="@+id/resume_list_foucus_counts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/resume_list_school"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/look"
+            android:text="啊啊啊"
+            android:textColor="@color/detail_second_text"
+            android:textSize="@dimen/small_text" />
+    </LinearLayout>
+
+</RelativeLayout>

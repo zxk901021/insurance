@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/search_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/search_job"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/title_size" />
+
+    <ImageView
+        android:id="@+id/search_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/search_title"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignTop="@id/search_title"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/search" />
+
+    <LinearLayout
+        android:id="@+id/search_lin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/search_title"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/search_back"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/btn_type"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/choose_type"
+            android:textColor="@color/white_bg" />
+
+        <TextView
+            android:id="@+id/btn_area"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/choose_area"
+            android:textColor="@color/white_bg" />
+
+        <TextView
+            android:id="@+id/btn_time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/choose_time"
+            android:textColor="@color/white_bg"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/btn_pay"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/choose_pay"
+            android:textColor="@color/white_bg" />
+    </LinearLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/newest_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_lin"
+        android:divider="@color/list_line_color"
+        android:dividerHeight="@dimen/short_line"
+        android:scrollbars="none"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
+    
+    <TextView 
+        android:id="@+id/newest_list_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_lin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/detail_second_text"
+        android:text="没有搜索结果"
+        android:visibility="gone"/>
+
+</RelativeLayout>

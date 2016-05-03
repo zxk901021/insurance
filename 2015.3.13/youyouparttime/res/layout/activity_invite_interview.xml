@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg" >
+
+    
+    <TextView 
+       android:id="@+id/invite_interview_back"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_margin="10dp"
+       android:text="返回"
+       android:textColor="@color/yellow"
+       android:textSize="15sp"
+       android:drawableLeft="@drawable/return_bg"
+       android:drawablePadding="5dp"
+       android:gravity="center_vertical"/>
+    
+   
+   <TextView 
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textColor="@color/text_color"
+       android:textSize="@dimen/title_size"
+       android:layout_marginTop="10dp"
+       android:layout_alignParentTop="true"
+       android:layout_centerHorizontal="true"
+       android:text="面试邀请"/>
+   
+   <View 
+       android:id="@+id/invite_interview_line"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/line"
+       android:background="@color/yellow"
+       android:layout_below="@id/invite_interview_back"/>
+   
+   <ScrollView 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/invite_interview_line"
+       android:padding="10dp"
+       android:scrollbars="none">
+       
+       <RelativeLayout 
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           
+           <TextView 
+       android:id="@+id/invite_text"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="请选择要发送的兼职"
+       android:textColor="@color/yellow"
+       android:textSize="14sp"
+       android:layout_margin="10dp"/>
+	<View 
+	    android:id="@+id/invite_line2"
+	    android:layout_width="match_parent"
+	    android:layout_height="@dimen/short_line"
+	    android:background="@color/line_color"
+	    android:layout_below="@id/invite_text"/>
+   <ListView 
+       android:id="@+id/invite_interview_list"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:scrollbars="none"
+       android:layout_below="@id/invite_line2"
+       android:divider="@color/line_color"
+       android:dividerHeight="@dimen/short_line">
+       
+   </ListView>
+   
+   <TextView 
+       android:id="@+id/add_new_job"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="新增兼职"
+       android:textColor="@color/text_color"
+       android:textSize="@dimen/list_text"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="15dp"
+       android:layout_below="@id/invite_interview_list"/>
+   
+   <Button 
+       android:id="@+id/invite_ensure"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/btn_height"
+       android:background="@drawable/yellow_btn_shape"
+       android:text="确认"
+       android:textColor="@color/white_bg"
+       android:layout_marginTop="15dp"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"
+       android:layout_below="@id/add_new_job"/>
+    <Button 
+       android:id="@+id/invite_cancel"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/btn_height"
+       android:background="@drawable/grey_btn_shape"
+       android:text="取消"
+       android:textColor="@color/white_bg"
+       android:layout_marginTop="15dp"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"
+       android:layout_below="@id/invite_ensure"/>
+       </RelativeLayout>
+   </ScrollView>
+   
+
+</RelativeLayout>

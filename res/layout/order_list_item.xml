@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    
+    <TextView 
+        android:id="@+id/order_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/small_text_size"
+        android:text="订单状态：已取消"/>
+    
+    <ImageView 
+        android:id="@+id/order_goods_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/aishenghuo"
+        android:layout_below="@+id/order_status"/>
+    
+    <TextView 
+        android:id="@+id/order_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单编号:20154565"
+        android:layout_below="@+id/order_status"
+        android:layout_toRightOf="@+id/order_goods_img"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"/>
+    
+    <TextView 
+        android:id="@+id/order_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单金额：￥157.22"
+        android:layout_below="@+id/order_num"
+        android:layout_toRightOf="@+id/order_goods_img"
+        android:layout_marginLeft="30dp"/>
+    
+    <TextView 
+        android:id="@+id/order_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="下单时间：2015-09-07 14：54：54"
+        android:layout_below="@+id/order_price"
+        android:layout_toRightOf="@+id/order_goods_img"
+        android:layout_marginLeft="30dp"/>
+    
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/personel_arrow_right"
+        android:layout_alignTop="@+id/order_goods_img"
+        android:layout_alignBottom="@+id/order_goods_img"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"/>
+    
+    
+
+</RelativeLayout>

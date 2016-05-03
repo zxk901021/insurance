@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg" >
+
+    <LinearLayout 
+        android:id="@+id/zili_list_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp">
+        <include layout="@layout/back_btn_layout"/>
+    </LinearLayout>
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我兼职我骄傲"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/title_size"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+    <View 
+        android:id="@+id/zili_list_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:background="@color/line_color"
+        android:layout_below="@id/zili_list_back"
+        android:layout_marginTop="10dp"/>
+
+    <ListView 
+        android:id="@+id/zili_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_below="@id/zili_list_line"
+        android:divider="@color/line_color"
+        android:dividerHeight="@dimen/short_line">
+        
+    </ListView>
+    
+</RelativeLayout>

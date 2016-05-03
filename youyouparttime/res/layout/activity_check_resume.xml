@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg" >
+
+   <TextView 
+       android:id="@+id/resume_check_back"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_margin="10dp"
+       android:text="返回"
+       android:textColor="@color/yellow"
+       android:textSize="15sp"
+       android:drawableLeft="@drawable/return_bg"
+       android:drawablePadding="5dp"
+       android:gravity="center_vertical"/>
+    
+   
+   <TextView 
+       android:id="@+id/check_resume_name"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textColor="@color/text_color"
+       android:textSize="@dimen/title_size"
+       android:layout_marginTop="10dp"
+       android:layout_alignParentTop="true"
+       android:layout_centerHorizontal="true"
+       android:text="aaa"/>
+   
+   
+   <WebView 
+       android:id="@+id/com_check_resume"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/resume_check_back"/>
+
+</RelativeLayout>

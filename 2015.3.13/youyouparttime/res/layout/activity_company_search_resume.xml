@@ -1,0 +1,329 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg" >
+
+    <LinearLayout
+        android:id="@+id/company_search_resume_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp" >
+
+        <include layout="@layout/back_btn_layout" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="搜索简历"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/title_size" />
+
+    <View
+        android:id="@+id/company_search_resume_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:layout_below="@id/company_search_resume_back"
+        android:background="@color/line_color" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/company_search_resume_line"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/search_resume_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="按兼职类型"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/list_text" />
+
+                <TextView
+                    android:id="@+id/search_resume_type_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_toLeftOf="@+id/search_resume_imageview1"
+                    android:singleLine="true"
+                    android:textSize="@dimen/list_text" />
+
+                <ImageView
+                    android:id="@+id/search_resume_imageview1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/arrows" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/search_resume_imageview1"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/search_resume_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="按兼职区域"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/list_text" />
+
+                <TextView
+                    android:id="@+id/search_resume_area_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_toLeftOf="@+id/search_resume_imageview2"
+                    android:singleLine="true"
+                    android:textSize="@dimen/list_text" />
+
+                <ImageView
+                    android:id="@+id/search_resume_imageview2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/arrows" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/search_resume_imageview2"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/search_resume_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/part_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="按兼职时间"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/list_text" />
+
+                <TextView
+                    android:id="@+id/search_resume_time_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_toLeftOf="@+id/search_resume_imageview3"
+                    android:layout_toRightOf="@id/part_time_text"
+                    android:singleLine="true"
+                    android:textSize="@dimen/list_text" />
+
+                <ImageView
+                    android:id="@+id/search_resume_imageview3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/arrows" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/search_resume_imageview3"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/search_resume_job_attent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="求职意向"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/list_text" />
+
+                <TextView
+                    android:id="@+id/search_resume_job_attent_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_toLeftOf="@+id/search_resume_imageview4"
+                    android:singleLine="true"
+                    android:textSize="@dimen/list_text" />
+
+                <ImageView
+                    android:id="@+id/search_resume_imageview4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/arrows" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/search_resume_imageview4"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/search_resume_healthy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="健康证"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/list_text" />
+
+                <TextView
+                    android:id="@+id/search_resume_healthy_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_toLeftOf="@+id/search_resume_imageview5"
+                    android:singleLine="true"
+                    android:textSize="@dimen/list_text" />
+
+                <ImageView
+                    android:id="@+id/search_resume_imageview5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/arrows" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/search_resume_imageview5"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/search_resume_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="身高"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/list_text" />
+
+                <TextView
+                    android:id="@+id/search_resume_height_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_toLeftOf="@+id/search_resume_imageview6"
+                    android:singleLine="true"
+                    android:text="不限"
+                    android:textSize="@dimen/list_text" />
+
+                <ImageView
+                    android:id="@+id/search_resume_imageview6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/arrows" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/search_resume_imageview6"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/search_resume_school"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="学校"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/list_text" />
+
+                <TextView
+                    android:id="@+id/search_resume_school_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_toLeftOf="@+id/search_resume_imageview7"
+                    android:singleLine="true"
+                    android:textSize="@dimen/list_text" />
+
+                <ImageView
+                    android:id="@+id/search_resume_imageview7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/arrows" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/short_line"
+                    android:layout_below="@id/search_resume_imageview7"
+                    android:background="@color/line_color" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/start_search_resume"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_height"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/yellow_btn_shape"
+                android:text="搜索"
+                android:textColor="@color/white_bg" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

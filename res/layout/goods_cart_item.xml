@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <ImageView
+        android:id="@+id/goods_cart_img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/aishenghuo" />
+
+    <TextView
+        android:id="@+id/goods_cart_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/goods_cart_img"
+        android:layout_toRightOf="@+id/goods_cart_img"
+        android:text="天生一对系列巴黎恋人18K金钻石对戒" />
+
+    <TextView
+        android:id="@+id/goods_cart_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/goods_cart_name"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@+id/goods_cart_img"
+        android:text="商品数量：3" />
+
+    <TextView
+        android:id="@+id/goods_cart_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/goods_cart_number"
+        android:layout_toRightOf="@+id/goods_cart_img"
+        android:text="商品价格：￥252.00" />
+
+</RelativeLayout>

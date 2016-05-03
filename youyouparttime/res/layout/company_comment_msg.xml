@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+
+    <TextView 
+        android:id="@+id/company_com_list_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/list_text"
+        android:layout_margin="10dp"
+        android:text="您收到来自公司提供的兼职"/>
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/arrows"
+        android:layout_marginRight="15dp"/>
+    <TextView 
+        android:id="@+id/company_com_list_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
+        android:layout_margin="10dp"
+        android:text="2014-10-21"
+        android:layout_below="@id/company_com_list_name"/>
+    <TextView 
+        android:id="@+id/company_com_list_isread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
+        android:layout_margin="10dp"
+        android:text="已读"
+        android:layout_below="@id/company_com_list_name"
+        android:layout_toRightOf="@id/company_com_list_time"/>
+    
+    
+</RelativeLayout>

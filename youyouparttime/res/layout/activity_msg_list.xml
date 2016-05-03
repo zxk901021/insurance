@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg" >
+
+   
+    <ImageView 
+        android:id="@+id/msg_list_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/return_bg"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"/>
+    
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/title_size"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="我的消息"/>
+    
+    <View 
+        android:id="@+id/msg_list_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:background="@color/line_color"
+        android:layout_below="@id/msg_list_back"
+        android:layout_marginTop="10dp"/>
+    <ListView
+        android:id="@+id/msg_list" 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:divider="@color/line_color"
+        android:dividerHeight="@dimen/short_line"
+        android:layout_below="@id/msg_list_line">
+        
+    </ListView>
+    
+</RelativeLayout>

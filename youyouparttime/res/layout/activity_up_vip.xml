@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg" >
+
+    <TextView
+        android:id="@+id/add_vip_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="返回"
+        android:textColor="@color/yellow"
+        android:textSize="15sp"
+        android:drawableLeft="@drawable/return_bg"
+        android:drawablePadding="3dp"
+        android:gravity="center_vertical"
+        android:layout_margin="10dp" />
+    
+    <TextView 
+        android:id="@+id/add_vip_title"
+         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上传图片"
+         android:textColor="@color/text_color"
+        android:textSize="@dimen/title_size"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+    
+    <View 
+        android:id="@+id/add_vip_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:background="@color/line_color"
+        android:layout_below="@id/add_vip_back"/>
+    
+    <ImageView 
+        android:id="@+id/stu_id_photo"
+         android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/resume_add_img"
+        android:layout_below="@id/add_vip_line"
+        android:layout_margin="15dp"
+        android:layout_centerHorizontal="true"/>
+    
+    <TextView 
+        android:id="@+id/add_vip_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stu_id_photo"
+        android:text="请选择图片"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/text_color"
+        android:layout_centerHorizontal="true"/>
+    
+    <Button 
+        android:id="@+id/add_vip_submit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:background="@drawable/yellow_btn_shape"
+        android:text="上传"
+        android:textColor="@color/white_bg"
+        android:layout_below="@id/add_vip_text"
+        android:layout_margin="15dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ebeced"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/title_bg"
+        android:gravity="center"
+        android:text="商品列表"
+        android:textColor="@color/white"
+        android:textSize="@dimen/large_medium_text_size" />
+
+    <GridView
+        android:id="@+id/category_goods_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ebeced"
+        android:gravity="center"
+        android:horizontalSpacing="5dp"
+        android:listSelector="#00000000"
+        android:numColumns="2"
+        android:padding="5dp"
+        android:verticalSpacing="5dp" >
+    </GridView>
+
+</LinearLayout>

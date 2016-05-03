@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@color/white_bg"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请选择"
+        android:textColor="@color/text_color"
+        android:textSize="14sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:background="@color/line_color"/>
+    
+    <TextView 
+        android:id="@+id/has"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="有"
+        android:textColor="@color/dialog_text"
+        android:textSize="@dimen/list_text"
+        android:gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:background="@color/line_color"/>
+    
+    <TextView 
+        android:id="@+id/hasnot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="无"
+        android:textColor="@color/dialog_text"
+        android:textSize="@dimen/list_text"
+        android:gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+
+</LinearLayout>

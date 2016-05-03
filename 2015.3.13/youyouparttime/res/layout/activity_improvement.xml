@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_bg" >
+
+    <TextView 
+        android:id="@+id/improvement_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/list_text"
+        android:drawableLeft="@drawable/return_bg"
+        android:gravity="center_vertical"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/title_size"
+        android:text="我兼职我骄傲" />
+
+    <TextView
+        android:id="@+id/improvement_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/list_text"
+        android:text="提交" />
+
+    <View
+        android:id="@+id/improvement_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line"
+        android:layout_below="@id/improvement_submit"
+        android:layout_marginTop="15dp"
+        android:background="@color/yellow" />
+
+    <ScrollView
+        android:id="@+id/improvement_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/improvement_line"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white_bg" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal" >
+            
+            <TextView 
+                android:id="@+id/improvement_content_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/list_text"/>
+
+            <EditText
+                android:id="@+id/improvement_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@null"
+                android:textSize="@dimen/list_text"
+                android:drawableBottom="@drawable/bottom_line"
+                android:hint="请输入工资"
+                android:inputType="number"/>
+             <TextView 
+                android:id="@+id/improvement_content_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/list_text"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

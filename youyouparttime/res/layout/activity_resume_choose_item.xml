@@ -1,0 +1,164 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@color/grey_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_bg">
+        
+        <TextView 
+            android:id="@+id/resume_item_choose_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="编辑简历"
+            android:textColor="@color/yellow"
+            android:textSize="15sp"
+            android:drawableLeft="@drawable/return_bg"
+            android:gravity="center_vertical"
+            android:layout_margin="10dp"/>
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="修改简历"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/title_size"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"/>
+        
+        <TextView 
+            android:id="@+id/resume_item_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="提交"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/list_text"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+        <View 
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:background="@color/line_color"
+        android:layout_below="@id/resume_item_choose_back"/>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/choose_resume_item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white_bg" >
+
+        <TextView
+            android:id="@+id/choose_layout_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:ems="4"
+            android:gravity="center_horizontal"
+            android:text="@string/phone_number"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/activity_title_size" />
+
+        <ImageView
+            android:id="@+id/choose_layout_img1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/choose_layout_text1"
+            android:src="@drawable/h_midline"
+            android:layout_centerVertical="true" />
+
+        <EditText
+            android:id="@+id/phone_change_edt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/choose_layout_img1"
+            android:layout_toLeftOf="@+id/verify_btn"
+            android:hint="@string/username"
+            android:inputType="phone"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:maxLength="11" />
+
+        <Button
+            android:id="@+id/verify_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/verrify_btn_shape"
+            android:text="@string/send_verify"
+            android:textColor="@color/red" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/choose_item_code_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/white_bg"
+        android:layout_marginTop="25dp" >	
+        
+        <TextView
+            android:id="@+id/register_student_code_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:ems="4"
+            android:gravity="center_horizontal"
+            android:text="@string/code"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/activity_title_size" />
+
+        <ImageView
+            android:id="@+id/choose_item_img2"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/register_student_code_text"
+            android:src="@drawable/h_midline"
+            android:layout_centerVertical="true" />
+
+        <EditText
+            android:id="@+id/choose_verify_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/choose_item_img2"
+            android:layout_centerVertical="true"
+            android:hint="@string/verify_code"
+            android:inputType="number" 
+            android:background="@null"
+            android:maxLength="6"/>
+    </RelativeLayout>
+    
+    
+    
+    
+
+</LinearLayout>

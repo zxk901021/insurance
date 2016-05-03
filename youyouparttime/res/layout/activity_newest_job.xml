@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg" >
+
+    <LinearLayout
+        android:id="@+id/newest_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp" >
+
+        <include layout="@layout/back_btn_layout" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/list_page_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/newest_back"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:text="@string/newest_job"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/title_size" />
+    
+    <TextView 
+        android:id="@+id/job_list_right_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="天津"
+        android:textColor="@color/yellow"
+        android:textSize="15sp"
+        android:drawableRight="@drawable/change_city_btn_bg"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignBottom="@id/newest_back"/>
+    
+    <TextView 
+        android:id="@+id/job_list_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="删除"
+        android:textColor="@color/yellow"
+        android:textSize="15sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignBottom="@id/newest_back"
+        android:visibility="gone"/>
+
+
+    <View
+        android:id="@+id/newest_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:layout_below="@id/newest_back"
+        android:background="@color/line_color" />
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/newest_job_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/newest_line"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:divider="@color/line_color"
+        android:dividerHeight="@dimen/short_line"
+        android:scrollbars="none" />
+
+</RelativeLayout>

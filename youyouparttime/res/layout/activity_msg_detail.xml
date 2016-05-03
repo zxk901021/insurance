@@ -1,0 +1,121 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg" >
+
+   <LinearLayout android:id="@+id/msg_detail_back"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentTop="true"
+       android:layout_marginTop="15dp"
+       android:layout_marginLeft="10dp">
+       
+       <include layout="@layout/back_btn_layout"/>
+   </LinearLayout>
+
+   <TextView 
+       android:id="@+id/msg_detail_list_title"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="我的消息"
+       android:textColor="@color/text_color"
+       android:textSize="@dimen/title_size"
+       android:layout_centerHorizontal="true"
+       android:layout_alignParentTop="true"
+       android:layout_marginTop="15dp"/>
+   
+   <TextView 
+       android:id="@+id/delete_msg"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="删除"
+       android:textColor="@color/yellow"
+       android:layout_alignParentRight="true"
+       android:layout_marginRight="10dp"
+       android:layout_marginTop="15dp"
+       android:textSize="@dimen/list_text"
+       android:padding="5dp"/>
+   
+   <View 
+       android:id="@+id/msg_detail_line"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/short_line"
+       android:background="@color/line_color"
+       android:layout_below="@id/msg_detail_list_title"
+       android:layout_marginTop="10dp"/>
+   
+   
+   <TextView 
+       android:id="@+id/msg_detail_title"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textColor="@color/text_color"
+       android:textSize="@dimen/list_text"
+       android:layout_margin="15dp"
+       android:layout_below="@id/msg_detail_line"/>
+   <TextView 
+       android:id="@+id/msg_detail_time"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
+       android:layout_below="@id/msg_detail_title"
+       android:layout_marginLeft="20dp"/>
+   
+   <View 
+       android:id="@+id/msg_detail_line1"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/short_line"
+       android:background="@color/line_color"
+       android:layout_below="@id/msg_detail_time"
+       android:layout_marginTop="15dp"/>
+   
+  
+   <TextView 
+       android:id="@+id/msg_detail_content"
+        android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
+       android:textSize="@dimen/list_text"
+       android:layout_below="@id/msg_detail_line1"
+       android:layout_marginTop="15dp"
+       android:layout_marginLeft="15dp"/>
+   
+   <TextView 
+       android:id="@+id/detail_text_annotation"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textColor="@color/text_color"
+       android:textSize="@dimen/list_text"
+       android:layout_below="@id/msg_detail_content"
+       android:layout_marginTop="50dp"
+       android:layout_marginLeft="15dp"
+       android:visibility="invisible"/>
+   
+   <Button 
+       android:id="@+id/detail_btn1"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/btn_height"
+       android:textColor="@color/white_bg"
+       android:background="@drawable/yellow_btn_shape"
+       android:layout_marginLeft="15dp"
+       android:layout_marginRight="15dp"
+       android:layout_marginTop="25dp"
+       android:layout_below="@id/detail_text_annotation"
+       android:visibility="invisible"/>
+   
+   
+   <Button 
+       android:id="@+id/detail_btn2"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/btn_height"
+       android:textColor="@color/white_bg"
+       android:background="@drawable/yellow_btn_shape"
+       android:layout_marginLeft="15dp"
+       android:layout_marginRight="15dp"
+       android:layout_marginTop="25dp"
+       android:layout_below="@id/detail_btn1"
+       android:visibility="invisible"/>
+   
+   
+</RelativeLayout>

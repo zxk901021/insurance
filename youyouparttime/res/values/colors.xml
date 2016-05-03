@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text_color">#000000</color>
+    <color name="yellow">#fa9600</color>
+    <color name="grey_bg">#f3f3f3</color>
+    <color name="white_bg">#ffffff</color>
+    <color name="line_color">#c8c8c8</color>
+    <color name="list_line_color">#c8c8c8</color>
+    <color name="verify_btn_bg">#f5e1d8</color>
+    <color name="red">#ed3b00</color>
+    <color name="blue">#3ca0dc</color>
+    <color name="dialog_text">#3aabcf</color>
+    <color name="grey_text">#c3c3c3</color>
+    <color name="detail_text_color">#696969</color>
+    <color name="detail_second_text">#7f7f7f</color>
+</resources>

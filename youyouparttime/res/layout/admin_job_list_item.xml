@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    <ImageView
+        android:id="@+id/admin_list_item_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/cuxiao"
+        android:layout_margin="20dp" />
+
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/admin_list_item_type">
+        <TextView
+        android:id="@+id/admin_list_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_marginLeft="10dp"
+        
+        android:text="大学城手机软件推广专员"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/small_text" />
+
+    <TextView
+        android:id="@+id/admin_list_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/admin_list_item_title"
+        android:layout_marginLeft="10dp"
+        android:text="2014-11-23"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/small_text" />
+
+    <TextView
+        android:id="@+id/admin_list_item_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/admin_list_item_title"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@id/admin_list_item_time"
+        android:text="已招满"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/small_text" />
+
+    <TextView
+        android:id="@+id/admin_list_item_resume_counts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/admin_list_item_title"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@id/admin_list_item_status"
+        android:text="收到的简历（10）"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/small_text" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/arrows" />
+        
+    </RelativeLayout>
+    
+</RelativeLayout>

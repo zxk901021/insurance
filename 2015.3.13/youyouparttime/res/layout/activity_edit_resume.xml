@@ -1,0 +1,390 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg" >
+
+    <LinearLayout
+        android:id="@+id/edit_resume_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp" >
+
+        <include layout="@layout/back_btn_layout" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/edit_resume_back"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignTop="@id/edit_resume_back"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:text="@string/preview"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/activity_title_size" />
+
+    <View
+        android:id="@+id/edit_resume_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:layout_below="@id/edit_resume_back"
+        android:background="@color/grey_bg" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_resume_line" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/edit_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@drawable/resume_add_img" />
+
+            <TextView
+                android:id="@+id/edit_photo_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_photo"
+                android:layout_margin="10dp"
+                android:text="@string/edit_photo_text" />
+
+            <View
+                android:id="@+id/edit_resume_line1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:layout_below="@id/edit_photo_text"
+                android:background="@color/grey_bg" />
+
+            <TextView
+                android:id="@+id/edit_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line1"
+                android:layout_margin="10dp"
+                android:text="@string/time_table"
+                android:textColor="@color/yellow" />
+
+            <TextView
+                android:id="@+id/time_table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/edit_time"
+                android:text="@string/edit" />
+
+            <ImageView
+                android:id="@+id/edit_btn_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/edit_time"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/edit_time"
+                android:layout_below="@id/edit_resume_line1"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/arrows" />
+
+            <View
+                android:id="@+id/edit_resume_line2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:layout_below="@id/edit_time"
+                android:background="@color/grey_bg" />
+
+            <TextView
+                android:id="@+id/edit_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line2"
+                android:layout_margin="10dp"
+                android:text="@string/name"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/resume_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/edit_name" />
+
+            <ImageView
+                android:id="@+id/edit_btn_time1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/edit_name"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/edit_name"
+                android:layout_below="@id/edit_resume_line2"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/arrows" />
+
+            <View
+                android:id="@+id/edit_resume_line3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:layout_below="@id/edit_name"
+                android:background="@color/grey_bg" />
+
+            <TextView
+                android:id="@+id/edit_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line3"
+                android:layout_margin="10dp"
+                android:text="@string/sex"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/resume_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line3"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/edit_sex" />
+
+            <ImageView
+                android:id="@+id/edit_btn_time2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/edit_sex"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/edit_sex"
+                android:layout_below="@id/edit_resume_line3"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/arrows" />
+
+            <View
+                android:id="@+id/edit_resume_line4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:layout_below="@id/edit_sex"
+                android:background="@color/grey_bg" />
+
+            <TextView
+                android:id="@+id/edit_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line4"
+                android:layout_margin="10dp"
+                android:text="@string/height"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/resume_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line4"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/edit_height" />
+
+            <ImageView
+                android:id="@+id/edit_btn_time3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/edit_height"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/edit_height"
+                android:layout_below="@id/edit_resume_line4"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/arrows" />
+
+            <View
+                android:id="@+id/edit_resume_line5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:layout_below="@id/edit_height"
+                android:background="@color/grey_bg" />
+
+            <TextView
+                android:id="@+id/edit_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line5"
+                android:layout_margin="10dp"
+                android:text="@string/age"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/resume_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line5"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/edit_age" />
+
+            <ImageView
+                android:id="@+id/edit_btn_time4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/edit_age"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/edit_age"
+                android:layout_below="@id/edit_resume_line5"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/arrows" />
+
+            <View
+                android:id="@+id/edit_resume_line6"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:layout_below="@id/edit_age"
+                android:background="@color/grey_bg" />
+
+            <TextView
+                android:id="@+id/edit_experience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line6"
+                android:layout_margin="10dp"
+                android:text="@string/experience"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/resume_experience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line6"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/edit_experience" />
+
+            <ImageView
+                android:id="@+id/edit_btn_time5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/edit_experience"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/edit_experience"
+                android:layout_below="@id/edit_resume_line6"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/arrows" />
+
+            <View
+                android:id="@+id/edit_resume_line7"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:layout_below="@id/edit_experience"
+                android:background="@color/grey_bg" />
+
+            <TextView
+                android:id="@+id/edit_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line7"
+                android:layout_margin="10dp"
+                android:text="@string/city"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/resume_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line7"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/edit_city" />
+
+            <ImageView
+                android:id="@+id/edit_btn_time6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/edit_city"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/edit_city"
+                android:layout_below="@id/edit_resume_line7"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/arrows" />
+
+            <View
+                android:id="@+id/edit_resume_line8"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:layout_below="@id/edit_city"
+                android:background="@color/grey_bg" />
+
+            <TextView
+                android:id="@+id/edit_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line8"
+                android:layout_margin="10dp"
+                android:text="@string/area"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/resume_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line8"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/edit_area" />
+
+            <ImageView
+                android:id="@+id/edit_btn_time7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/edit_area"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/edit_area"
+                android:layout_below="@id/edit_resume_line8"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/arrows" />
+
+            <View
+                android:id="@+id/edit_resume_line9"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/short_line"
+                android:layout_below="@id/edit_area"
+                android:background="@color/grey_bg" />
+
+            <TextView
+                android:id="@+id/edit_school"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line9"
+                android:layout_margin="10dp"
+                android:text="@string/school"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/resume_school"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_resume_line9"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/edit_school" />
+
+            <ImageView
+                android:id="@+id/edit_btn_time8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/edit_school"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/edit_school"
+                android:layout_below="@id/edit_resume_line9"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/arrows" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,206 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg" >
+
+    <LinearLayout
+        android:id="@+id/company_release_jobs_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp" >
+
+        <include layout="@layout/back_btn_layout" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="发布兼职"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/title_size" />
+
+    <View
+        android:id="@+id/release_three_jobs_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:layout_below="@id/company_release_jobs_back"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/company_release_new_parttime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/release_three_jobs_line"
+        android:background="@drawable/btn_selected" >
+
+        <ImageView
+            android:id="@+id/company_release_threejob_img1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/company_icon8" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical" 
+            android:layout_toRightOf="@id/company_release_threejob_img1"
+            	>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="发布新兼职"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/large_text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="The latest part-time"
+                android:textColor="@color/detail_second_text" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           	android:layout_alignParentRight="true"
+           	android:layout_centerVertical="true"
+            android:src="@drawable/arrows"
+            android:layout_marginRight="10dp" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/company_release_new_job_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:layout_below="@id/company_release_new_parttime"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/company_search_resume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/company_release_new_job_line"
+        android:background="@drawable/btn_selected">
+
+        <ImageView
+            android:id="@+id/company_release_threejob_img2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="15dp"
+			android:layout_centerVertical="true"
+            android:src="@drawable/company_icon9" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/company_release_threejob_img2" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="搜索学生简历"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/large_text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Search resumes"
+                android:textColor="@color/detail_second_text" />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           	android:layout_alignParentRight="true"
+           	android:layout_centerVertical="true"
+            android:src="@drawable/arrows" 
+            android:layout_marginRight="10dp"/>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/company_release_new_job_line2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:layout_below="@id/company_search_resume"
+        android:background="@color/line_color" />
+
+    <RelativeLayout
+        android:id="@+id/company_entrust"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/company_release_new_job_line2"
+        android:background="@drawable/btn_selected" >
+
+        <ImageView
+             android:id="@+id/company_release_threejob_img3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/company_icon10"
+            android:layout_centerVertical="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/company_release_threejob_img3" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="委托悠兼职招聘"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/large_text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Commissioned by the recruitment"
+                android:textColor="@color/detail_second_text" />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           	android:layout_alignParentRight="true"
+           	android:layout_centerVertical="true"
+            android:src="@drawable/arrows"
+            android:layout_marginRight="10dp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:layout_below="@id/company_entrust"
+        android:background="@color/line_color" />
+
+</RelativeLayout>

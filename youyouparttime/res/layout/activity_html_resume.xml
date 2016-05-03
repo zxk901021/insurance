@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg">
+
+   <LinearLayout 
+       android:id="@+id/resume_review_back"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentTop="true"
+       android:layout_alignParentLeft="true"
+       android:layout_marginTop="10dp"
+       android:layout_marginLeft="10dp">
+       
+       <TextView 
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="求职简历"
+           android:drawableLeft="@drawable/return_bg"
+           android:textColor="@color/yellow"
+           android:gravity="center_vertical"/>
+       
+   </LinearLayout>
+
+   <TextView 
+       android:id="@+id/users_name"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="蒋光霞"
+       android:textColor="@color/text_color"
+       android:layout_marginTop="10dp"
+       android:textSize="@dimen/title_size"
+       android:layout_alignParentTop="true"
+       android:layout_centerHorizontal="true"/>
+   
+   <TextView 
+       android:id="@+id/resume_goto_edit"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="编辑简历"
+       android:textColor="@color/yellow"
+       android:layout_alignParentTop="true"
+       android:layout_alignParentRight="true"
+       android:layout_marginTop="10dp"
+       android:layout_marginRight="10dp"
+       android:textSize="@dimen/list_text"/>
+   <View 
+       android:id="@+id/resume_review_line"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/short_line"
+       android:background="@color/line_color"
+       android:layout_below="@id/resume_review_back"
+       android:layout_marginTop="10dp"/>
+   
+   <WebView
+       android:id="@+id/resume_webview" 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/resume_review_line"/>
+</RelativeLayout>

@@ -1,0 +1,249 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_bg" >
+
+    <LinearLayout
+        android:id="@+id/back_to_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp" >
+
+        <include layout="@layout/back_btn_layout" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/register_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/back_to_login"
+        android:layout_alignParentTop="true"
+        android:layout_alignTop="@id/back_to_login"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:text="@string/register_for_student"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/title_size" />
+
+    <View
+        android:id="@+id/line_register"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line"
+        android:layout_below="@id/back_to_login"
+        android:background="#fa9403" />
+
+    <RelativeLayout
+        android:id="@+id/register_phone_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_register"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white_bg" >
+
+        <TextView
+            android:id="@+id/register_student_phone_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:ems="4"
+            android:gravity="center_horizontal"
+            android:text="@string/phone_number"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/activity_title_size" />
+
+        <ImageView
+            android:id="@+id/register_student_image1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/register_student_phone_text"
+            android:src="@drawable/h_midline"
+            android:layout_centerVertical="true" />
+
+        <EditText
+            android:id="@+id/register_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/register_student_image1"
+            android:layout_toLeftOf="@+id/send_verify"
+            android:hint="@string/username"
+            android:inputType="phone"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:maxLength="11" />
+
+        <Button
+            android:id="@+id/send_verify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/verrify_btn_shape"
+            android:text="@string/send_verify"
+            android:textColor="@color/red" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/register_code_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/register_phone_layout"
+        android:layout_alignRight="@id/register_phone_layout"
+        android:layout_below="@id/register_phone_layout"
+        android:background="@color/white_bg"
+        android:layout_marginTop="25dp" >	
+        
+        <TextView
+            android:id="@+id/register_student_code_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:ems="4"
+            android:gravity="center_horizontal"
+            android:text="@string/code"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/activity_title_size" />
+
+        <ImageView
+            android:id="@+id/register_student_image2"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/register_student_code_text"
+            android:src="@drawable/h_midline"
+            android:layout_centerVertical="true" />
+
+        <EditText
+            android:id="@+id/register_verify_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/register_student_image2"
+            android:layout_centerVertical="true"
+            android:hint="@string/verify_code"
+            android:inputType="number" 
+            android:background="@null"
+            android:maxLength="6"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/register_pass_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/register_phone_layout"
+        android:layout_alignRight="@id/register_phone_layout"
+        android:layout_below="@id/register_code_layout"
+        android:background="@color/white_bg"
+        android:layout_marginTop="25dp" >
+        <TextView
+            android:id="@+id/register_student_pass_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:ems="4"
+            android:gravity="center_horizontal"
+            android:text="@string/pass"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/activity_title_size" />
+
+        <ImageView
+            android:id="@+id/register_student_image3"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/register_student_pass_text"
+            android:src="@drawable/h_midline"
+            android:layout_centerVertical="true" />
+
+        <EditText
+            android:id="@+id/register_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/register_student_image3"
+            android:layout_toLeftOf="@+id/register_student_can_see"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:maxLength="16"/>
+        <ImageView 
+		    android:id="@+id/register_student_can_see"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:src="@drawable/look"
+    	    android:layout_margin="10dp"
+    	   	android:layout_centerVertical="true"
+    	   	android:layout_alignParentRight="true"/> 
+    </RelativeLayout>
+
+    <CheckBox
+        android:id="@+id/register_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/register_pass_layout"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/register_pass_layout"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="@string/rules"
+        android:textColor="@color/text_color"
+        android:checked="true" 
+        android:textSize="@dimen/list_text"
+        style="@style/CheckBoxAgreeTheme"/>
+
+    <TextView
+        android:id="@+id/text_rules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/register_check"
+        android:layout_alignTop="@id/register_check"
+        android:layout_below="@id/register_pass_layout"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@id/register_check"
+        android:gravity="center_vertical"
+        android:text="@string/text_rules"
+        android:textSize="@dimen/list_text"
+        android:textColor="@color/yellow" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/btn_height"
+        android:layout_alignLeft="@id/register_pass_layout"
+        android:layout_alignRight="@id/register_pass_layout"
+        android:layout_below="@id/text_rules"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/yellow_btn_shape"
+        android:text="@string/register"
+        android:textColor="@color/white_bg"
+        android:textSize="@dimen/title_size"
+        android:padding="5dp" />
+
+</RelativeLayout>

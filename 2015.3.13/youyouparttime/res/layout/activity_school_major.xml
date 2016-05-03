@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bg" >
+
+    <ImageView
+        android:id="@+id/school_major_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:src="@drawable/return_bg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="修改简历中..."
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/title_size" />
+
+    <View
+        android:id="@+id/school_major_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:layout_below="@id/school_major_back"
+        android:background="@color/line_color" />
+
+    <TextView
+        android:id="@+id/school_major_hint_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/school_major_line"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="5dp"
+        android:text="请输入学校匹配："
+        android:textColor="@color/text_color"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/school_major_hint_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/school_major_hint_text"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/yellow"
+        android:textSize="10sp" />
+
+    <EditText
+        android:id="@+id/school_major_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/school_major_hint_text2"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@null"
+        android:hint="请输入学校" />
+
+    <View
+        android:id="@+id/school_major_line2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short_line"
+        android:layout_below="@id/school_major_edit"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="2dp"
+        android:background="#f39501" />
+
+    <LinearLayout
+        android:id="@+id/school_major_list_layout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/school_major_line2"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="#000000"
+        android:paddingBottom="1dp"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp"
+        android:visibility="gone"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/school_major_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white_bg"
+            android:divider="@color/line_color"
+            android:dividerHeight="@dimen/short_line" >
+        </ListView>
+        
+        <TextView 
+            android:id="@+id/school_major_list_text"
+            android:background="@color/white_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/list_text"
+            android:text="没有相关搜索结果"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal|center_vertical"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+</RelativeLayout>
