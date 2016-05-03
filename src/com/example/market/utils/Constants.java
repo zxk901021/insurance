@@ -25,6 +25,8 @@ public class Constants {
 		public static final String INSURANCE_REGISTER = "http://www.yiyingjie.com/InsuranceInterface/user_registration.php?";
 	
 		public static final String INSURANCE_LOGIN = "http://www.yiyingjie.com/InsuranceInterface/user_login.php?";
+		
+		public static final String INSURANCE_HOMEPAGE = "http://www.yiyingjie.com/InsuranceInterface/home_page.php?num=2";
 	}
 
 	public static final class BROADCAST_FILTER {

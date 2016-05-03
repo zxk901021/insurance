@@ -44,6 +44,7 @@ public class SignUpActivity extends Activity implements OnClickListener {
 	private boolean isBtnChecked = true;
 	private EditText mEditPswVal;
 	private String signResult;
+	private String registerResult;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +108,33 @@ public class SignUpActivity extends Activity implements OnClickListener {
 			mBtnSignUp.setEnabled(false);
 		}
 	}
+	
+	public void register(){
+		String username = mEditUser.getText().toString();
+		String password = mEditPsw.getText().toString();
+		String pwd = mEditPswVal.getText().toString();
+		
+		if (!password.equals(pwd)) {
+			mEditPswVal.setText("");
+			mEditPswVal.setError("两次输入的密码不一致");
+			return;
+		}
+		HTTPUtils.getVolley(SignUpActivity.this, 
+				Constants.INTENT_KEY.INSURANCE_REGISTER + "user_name=" + username + "&pwd=" + password , 
+				new VolleyListener() {
+			
+			@Override
+			public void onErrorResponse(VolleyError arg0) {
+				
+			}
+			
+			@Override
+			public void onResponse(String arg0) {
+				registerResult = arg0;
+				
+			}
+		});
+	}
 
 	private void signup() {
 		String userName = mEditUser.getText().toString();
@@ -161,7 +189,8 @@ public class SignUpActivity extends Activity implements OnClickListener {
 			finish();
 			break;
 		case R.id.btn_sign_up:
-			signup();
+//			signup();
+			register();
 			break;
 
 		default:
@@ -195,6 +224,19 @@ public class SignUpActivity extends Activity implements OnClickListener {
 				}
 				break;
 
+			case 2:
+				try {
+					JSONObject object = new JSONObject(registerResult);
+					String result = object.getString("code");
+					if (result.equals("001")) {
+						Toast.makeText(SignUpActivity.this, "注册成功！", Toast.LENGTH_SHORT).show();
+						finish();
+					}
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+				break;
+				
 			default:
 				break;
 			}

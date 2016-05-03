@@ -21,6 +21,7 @@ import com.sina.weibo.sdk.auth.sso.SsoHandler;
 import com.sina.weibo.sdk.openapi.UsersAPI;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -70,6 +71,8 @@ public class LoginActivity extends Activity implements OnClickListener,
 
 	/** 用户信息接口 */
 	private UsersAPI mUsersAPI;
+	
+	private String loginsResult;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -163,30 +166,12 @@ public class LoginActivity extends Activity implements OnClickListener,
 		mTgBtnShowPsw = (ToggleButton) findViewById(R.id.tgbtn_show_psw);
 	}
 
-	public void logInsurance(){
-		String username = mEditUid.getText().toString();
-		String password = mEditPsw.getText().toString();
-		if (TextUtils.isEmpty(username)) {
-			Toast.makeText(LoginActivity.this, "用户名为空！", Toast.LENGTH_SHORT).show();
-			return;
-		}
-		if (TextUtils.isEmpty(password)) {
-			Toast.makeText(LoginActivity.this, "密码为空！", Toast.LENGTH_SHORT).show();
-			return;
-		}
-		HTTPUtils.getVolley(LoginActivity.this, 
-				Constants.INTENT_KEY.INSURANCE_LOGIN + "username=" + username + "&pwd=" + password, 
-				new VolleyListener() {
-			
-			@Override
-			public void onErrorResponse(VolleyError error) {
-				Toast.makeText(LoginActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-			}
-			
-			@Override
-			public void onResponse(String response) {
+	Handler handler = new Handler(){
+		public void handleMessage(android.os.Message msg) {
+			switch (msg.what) {
+			case 1:
 				try {
-					JSONObject object = new JSONObject(response);
+					JSONObject object = new JSONObject(loginsResult);
 					String result = object.getString("code");
 					if (result.equals("001")) {
 						Toast.makeText(LoginActivity.this, "登录成功！", Toast.LENGTH_SHORT).show();
@@ -200,6 +185,40 @@ public class LoginActivity extends Activity implements OnClickListener,
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}
+				break;
+
+			default:
+				break;
+			}
+		};
+	};
+	
+	
+	public void logInsurance(){
+		String username = mEditUid.getText().toString();
+		String password = mEditPsw.getText().toString();
+		if (TextUtils.isEmpty(username)) {
+			Toast.makeText(LoginActivity.this, "用户名为空！", Toast.LENGTH_SHORT).show();
+			return;
+		}
+		if (TextUtils.isEmpty(password)) {
+			Toast.makeText(LoginActivity.this, "密码为空！", Toast.LENGTH_SHORT).show();
+			return;
+		}
+		HTTPUtils.getVolley(LoginActivity.this, 
+				Constants.INTENT_KEY.INSURANCE_LOGIN + "user_name=" + username + "&pwd=" + password, 
+				new VolleyListener() {
+			
+			@Override
+			public void onErrorResponse(VolleyError error) {
+				Toast.makeText(LoginActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+			}
+			
+			@Override
+			public void onResponse(String response) {
+				loginsResult = response;
+				handler.sendEmptyMessage(1);
+				
 			}
 		});
 	}
@@ -209,7 +228,8 @@ public class LoginActivity extends Activity implements OnClickListener,
 		switch (v.getId()) {
 		case R.id.btn_login: // 登录
 			// login();
-			loginIn();
+//			loginIn();
+			logInsurance();
 			break;
 		case R.id.img_back: // 返回
 			finish();
@@ -271,6 +291,8 @@ public class LoginActivity extends Activity implements OnClickListener,
 		edit.commit();
 	}
 
+	
+	
 	private void loginIn() {
 		String userName = mEditUid.getText().toString();
 		String pwd = mEditPsw.getText().toString();

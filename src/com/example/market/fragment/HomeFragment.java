@@ -27,6 +27,7 @@ import com.example.market.bean.GoodsInfo;
 import com.example.market.bean.HelpCenterItem;
 import com.example.market.utils.Constants;
 import com.example.market.utils.NotificationUtil;
+import com.google.gson.JsonObject;
 import com.lib.volley.HTTPUtils;
 import com.lib.volley.VolleyListener;
 import com.nineoldandroids.animation.ObjectAnimator;
@@ -108,6 +109,7 @@ public class HomeFragment extends Fragment implements OnClickListener {
 	private RelativeLayout mainLayout;
 	private Button login;
 	private boolean isLogin;
+	private String homepageResult;
 
 	Handler handler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
@@ -221,6 +223,18 @@ public class HomeFragment extends Fragment implements OnClickListener {
 					e.printStackTrace();
 				}
 				break;
+				
+			case 110:
+				try {
+					JSONObject object = new JSONObject(homepageResult);
+					String code = object.getString("code");
+					if (code.equals("001")) {
+						
+					}
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+				break;
 
 			default:
 				break;
@@ -245,8 +259,25 @@ public class HomeFragment extends Fragment implements OnClickListener {
 		initPager();
 		autoScroll();
 		initData();
+		initInsurance();
 
 		return layout;
+	}
+	
+	private void initInsurance(){
+		HTTPUtils.getVolley(getActivity(), Constants.INTENT_KEY.INSURANCE_HOMEPAGE, new VolleyListener() {
+			
+			@Override
+			public void onErrorResponse(VolleyError arg0) {
+				
+			}
+			
+			@Override
+			public void onResponse(String response) {
+				homepageResult = response;
+				handler.sendEmptyMessage(110);
+			}
+		});
 	}
 
 	private void initData() {
