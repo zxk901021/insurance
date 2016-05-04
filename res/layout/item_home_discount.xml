@@ -46,6 +46,7 @@
             
             android:src="@drawable/ernv"/>
         <TextView 
+            android:id="@+id/child_tv1"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:text="平安儿女宝宝险，成长之路首选"
@@ -70,6 +71,7 @@
             
             android:src="@drawable/ernvs"/>
         <TextView 
+            android:id="@+id/child_tv2"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:text="中国人寿少儿保险为孩子的成长教育提供保障"

@@ -41,22 +41,22 @@ public final class R {
 		public static final int navbar = 0x7f0200c3;
 	}
 	public static final class id {
-		public static final int btn_add_qrcode = 0x7f0801c8;
-		public static final int btn_cancel_scan = 0x7f0800c4;
-		public static final int btn_scan_barcode = 0x7f0801c5;
+		public static final int btn_add_qrcode = 0x7f0801d2;
+		public static final int btn_cancel_scan = 0x7f0800c5;
+		public static final int btn_scan_barcode = 0x7f0801cf;
 		public static final int encode_failed = 0x7f080008;
 		public static final int encode_succeeded = 0x7f080009;
-		public static final int et_qr_string = 0x7f0801c7;
-		public static final int iv_qr_image = 0x7f0801c9;
-		public static final int preview_view = 0x7f0800c2;
+		public static final int et_qr_string = 0x7f0801d1;
+		public static final int iv_qr_image = 0x7f0801d3;
+		public static final int preview_view = 0x7f0800c3;
 		public static final int search_book_contents_failed = 0x7f08000a;
 		public static final int search_book_contents_succeeded = 0x7f08000b;
-		public static final int tv_scan_result = 0x7f0801c6;
-		public static final int viewfinder_view = 0x7f0800c3;
+		public static final int tv_scan_result = 0x7f0801d0;
+		public static final int viewfinder_view = 0x7f0800c4;
 	}
 	public static final class layout {
 		public static final int camera = 0x7f03001d;
-		public static final int main = 0x7f03004d;
+		public static final int main = 0x7f03004e;
 	}
 	public static final class raw {
 		public static final int beep = 0x7f060000;

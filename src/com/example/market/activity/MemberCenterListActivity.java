@@ -14,11 +14,14 @@ import com.example.market.R;
 import com.example.market.bean.Consignee;
 import com.example.market.bean.Goods;
 import com.example.market.bean.GoodsOrder;
+import com.example.market.bean.Insurance;
+import com.example.market.db.InsuranceSQLiteDatabase;
 import com.example.market.fragment.MineFragment;
 import com.example.market.utils.Constants;
 import com.google.gson.JsonArray;
 import com.lib.volley.HTTPUtils;
 import com.lib.volley.VolleyListener;
+import com.zhy_9.shopping_mall.adapter.CollectAdapter;
 import com.zhy_9.shopping_mall.adapter.ConsigneeAdapter;
 import com.zhy_9.shopping_mall.adapter.GoodsGridViewAdapter;
 import com.zhy_9.shopping_mall.adapter.OrderListAdapter;
@@ -34,6 +37,8 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -61,6 +66,10 @@ public class MemberCenterListActivity extends Activity implements
 
 	private ConsigneeAdapter consigneeAdapter;
 	private List<Consignee> consigneeData;
+	private ListView collectList;
+	private InsuranceSQLiteDatabase db;
+	private CollectAdapter collectAdapter;
+	private List<Insurance> collectData;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -84,15 +93,44 @@ public class MemberCenterListActivity extends Activity implements
 		bottom = (RelativeLayout) findViewById(R.id.member_list_bottom);
 		title = (TextView) findViewById(R.id.member_info_list_title);
 		goodsGrid = (InternalGridView) findViewById(R.id.member_info_gridview);
+		collectList = (ListView) findViewById(R.id.collect_list);
 		if (mode == 2) {
 			bottom.setVisibility(View.VISIBLE);
 		}
 		if (mode == 4) {
 			infoList.setVisibility(View.GONE);
 			goodsGrid.setVisibility(View.VISIBLE);
+			collectList.setVisibility(View.VISIBLE);
+			db = new InsuranceSQLiteDatabase(this);
+			collectData = new ArrayList<Insurance>();
+			collectData = db.query();
+			collectAdapter = new CollectAdapter(this, collectData);
+			collectList.setAdapter(collectAdapter);
+			collectList.setOnItemClickListener(new OnItemClickListener() {
+
+				@Override
+				public void onItemClick(AdapterView<?> parent, View view,
+						int position, long id) {
+					Intent intent = new Intent(MemberCenterListActivity.this, InsuranceDetailActivity.class);
+					intent.putExtra("name", collectData.get(position).getName());
+					startActivity(intent);
+				}
+			});
+			
 		}
 	}
 
+	@Override
+	protected void onRestart() {
+		super.onRestart();
+		collectData = db.query();
+		collectAdapter.notifyDataSetChanged();
+		collectAdapter = new CollectAdapter(this, collectData);
+		collectList.setAdapter(collectAdapter);
+		
+	}
+	
+	
 	private void setTitle() {
 		String titleStr = null;
 		switch (mode) {

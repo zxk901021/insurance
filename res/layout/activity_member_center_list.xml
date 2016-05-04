@@ -30,6 +30,14 @@
             android:textColor="@color/white"
             android:textSize="@dimen/medium_text_size" />
     </RelativeLayout>
+    
+    <ListView 
+        android:id="@+id/collect_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/member_list_title">
+        
+    </ListView>
 
     <ListView
         android:id="@+id/member_info_listview"

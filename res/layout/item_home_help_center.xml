@@ -53,6 +53,7 @@
             
             android:src="@drawable/jingwai"/>
         <TextView 
+            android:id="@+id/career_tv1"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:text="平安境外工作保险 性价比高的境外工作保险"
@@ -77,6 +78,7 @@
             
             android:src="@drawable/jingwai2"/>
         <TextView 
+            android:id="@+id/career_tv2"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:text="工作也会暗藏危险　买份意外险作保障"

@@ -4,10 +4,14 @@ import com.example.market.R;
 import com.example.market.R.id;
 import com.example.market.R.layout;
 import com.example.market.R.menu;
+import com.example.market.bean.Insurance;
+import com.example.market.db.InsuranceSQLiteDatabase;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +21,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class InsuranceDetailActivity extends Activity implements OnClickListener{
 
@@ -25,6 +31,11 @@ public class InsuranceDetailActivity extends Activity implements OnClickListener
 	private Button buy;
 	private String detailUrl;
 	private int flag;
+	private String name;
+	private TextView collect;
+	private InsuranceSQLiteDatabase db;
+	private Insurance insurance;
+	private boolean hasCollected;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +43,13 @@ public class InsuranceDetailActivity extends Activity implements OnClickListener
 		setContentView(R.layout.activity_insurance_detail);
 		Intent intent = getIntent();
 		flag = intent.getIntExtra("flag", 1);
+		name = intent.getStringExtra("name");
+		if (TextUtils.isEmpty(name)) {
+			name = "";
+		}
+		db = new InsuranceSQLiteDatabase(this);
+		hasCollected = db.hasCollected(name);
+		Log.e("hascollected", hasCollected + "");
 		initView();
 	}
 	
@@ -39,8 +57,15 @@ public class InsuranceDetailActivity extends Activity implements OnClickListener
 		insuranceDetail = (WebView) findViewById(R.id.insurance_webview);
 		back = (ImageView) findViewById(R.id.insruance_back);
 		buy = (Button) findViewById(R.id.insurance_buy);
+		collect = (TextView) findViewById(R.id.collect_insurance_text);
+		if (hasCollected) {
+			collect.setText("已收藏");
+		}else {
+			collect.setText("收藏");
+		}
 		back.setOnClickListener(this);
 		buy.setOnClickListener(this);
+		collect.setOnClickListener(this);
 		insuranceDetail.setWebViewClient(new WebViewClient(){
 			@Override
 			public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -100,6 +125,23 @@ public class InsuranceDetailActivity extends Activity implements OnClickListener
 		case R.id.insurance_buy:
 			Intent intent = new Intent(InsuranceDetailActivity.this, BuyActivity.class);
 			startActivity(intent);
+			break;
+			
+		case R.id.collect_insurance_text:
+			if (hasCollected) {
+				db.deleteCollect(name);
+				collect.setText("收藏");
+				hasCollected = false;
+				Toast.makeText(InsuranceDetailActivity.this, "已取消收藏该商品", Toast.LENGTH_SHORT).show();
+			}else {
+				insurance = new Insurance();
+				insurance.setName(name);
+				db.addTable(insurance);
+				collect.setText("已收藏");
+				hasCollected = true;
+				Toast.makeText(InsuranceDetailActivity.this, "收藏成功！", Toast.LENGTH_SHORT).show();
+			}
+			
 			break;
 		}
 			

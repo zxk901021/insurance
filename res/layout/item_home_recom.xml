@@ -45,6 +45,7 @@
             
             android:src="@drawable/laonian"/>
         <TextView 
+            android:id="@+id/old_tv1"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:text="老年人意外险选太平_每天不足1元钱"
@@ -69,6 +70,7 @@
             
             android:src="@drawable/laonian2"/>
         <TextView 
+            android:id="@+id/old_tv2"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:text="平安老年人综合保险

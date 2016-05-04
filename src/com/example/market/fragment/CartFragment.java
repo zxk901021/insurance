@@ -117,7 +117,7 @@ public class CartFragment extends Fragment implements OnClickListener {
 		uid = sp.getString("uid", "");
 		boolean isLogined = sp.getBoolean("isLogin", false);
 		if (layout != null) {
-			mProgressBar.setVisibility(View.VISIBLE);
+			mProgressBar.setVisibility(View.GONE);
 //			initData();
 			
 			if (isLogined) {

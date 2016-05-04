@@ -25,6 +25,7 @@ import com.example.market.activity.WebActivity;
 import com.example.market.bean.Goods;
 import com.example.market.bean.GoodsInfo;
 import com.example.market.bean.HelpCenterItem;
+import com.example.market.bean.Insurance;
 import com.example.market.utils.Constants;
 import com.example.market.utils.NotificationUtil;
 import com.google.gson.JsonObject;
@@ -65,6 +66,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
 
 /**
@@ -110,6 +112,10 @@ public class HomeFragment extends Fragment implements OnClickListener {
 	private Button login;
 	private boolean isLogin;
 	private String homepageResult;
+	
+	private List<Insurance> insurances;
+	
+	private TextView childrenTv1, childrenTv2, oldTv1, oldTv2, travelTv1, travelTv2, careerTv1, careerTv2;
 
 	Handler handler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
@@ -224,12 +230,31 @@ public class HomeFragment extends Fragment implements OnClickListener {
 				}
 				break;
 				
-			case 110:
+			case 5:
 				try {
 					JSONObject object = new JSONObject(homepageResult);
 					String code = object.getString("code");
+					
 					if (code.equals("001")) {
-						
+						insurances = new ArrayList<Insurance>();
+						JSONArray insur = new JSONArray();
+						insur = object.getJSONArray("list");
+						for (int i = 0; i < insur.length(); i ++ ){
+							JSONObject ins = insur.getJSONObject(i);
+							Insurance insurance = new Insurance();
+							insurance.setId(ins.getString("id"));
+							insurance.setName(ins.getString("name"));
+							insurance.setParentId(ins.getString("parent_id"));
+							insurances.add(insurance);
+						}
+						childrenTv1.setText(insurances.get(0).getName());
+						childrenTv2.setText(insurances.get(1).getName());
+						oldTv1.setText(insurances.get(2).getName());
+						oldTv2.setText(insurances.get(3).getName());
+						travelTv1.setText(insurances.get(4).getName());
+						travelTv2.setText(insurances.get(5).getName());
+						careerTv1.setText(insurances.get(6).getName());
+						careerTv2.setText(insurances.get(7).getName());
 					}
 				} catch (JSONException e) {
 					e.printStackTrace();
@@ -275,7 +300,7 @@ public class HomeFragment extends Fragment implements OnClickListener {
 			@Override
 			public void onResponse(String response) {
 				homepageResult = response;
-				handler.sendEmptyMessage(110);
+				handler.sendEmptyMessage(5);
 			}
 		});
 	}
@@ -426,6 +451,14 @@ public class HomeFragment extends Fragment implements OnClickListener {
 	}
 
 	private void initView() {
+		childrenTv1 = (TextView) layout.findViewById(R.id.child_tv1);
+		childrenTv2 = (TextView) layout.findViewById(R.id.child_tv2);
+		oldTv1 = (TextView) layout.findViewById(R.id.old_tv1);
+		oldTv2 = (TextView) layout.findViewById(R.id.old_tv2);
+		travelTv1 = (TextView) layout.findViewById(R.id.travel_tv1);
+		travelTv2 = (TextView) layout.findViewById(R.id.travel_tv2);
+		careerTv1 = (TextView) layout.findViewById(R.id.career_tv1);
+		careerTv2 = (TextView) layout.findViewById(R.id.career_tv2);
 		layout.findViewById(R.id.img_home_category).setOnClickListener(this);
 		layout.findViewById(R.id.img_home_search_code).setOnClickListener(this);
 		layout.findViewById(R.id.layout_my_focus).setOnClickListener(this);
@@ -752,44 +785,70 @@ public class HomeFragment extends Fragment implements OnClickListener {
 			break;
 
 		case R.id.home_children:
-			gotoWebDetail(1);
+			String name = childrenTv1.getText().toString();
+			if (name != null) {
+				gotoWebDetail(1, name);
+			}
+			
 			break;
 			
 		case R.id.home_children_2:
-			gotoWebDetail(1);
+			String name1 = childrenTv2.getText().toString();
+			if (name1 != null) {
+				gotoWebDetail(1, name1);
+			}
 			break;
 			
 		case R.id.home_old:
-			gotoWebDetail(1);
+			String name2 = oldTv1.getText().toString();
+			if (name2 != null) {
+				gotoWebDetail(1, name2);
+			}
 			break;
 			
 		case R.id.old_man:
-			gotoWebDetail(1);
+			String name3 = oldTv2.getText().toString();
+			if (name3 != null) {
+				gotoWebDetail(1, name3);
+			}
 			break;
 			
 		case R.id.home_go:
-			gotoWebDetail(1);
+			String name4 = travelTv1.getText().toString();
+			if (name4 != null) {
+				gotoWebDetail(1, name4);
+			}
 			break;
 			
 		case R.id.home_go_2:
-			gotoWebDetail(1);
+			String name5 = travelTv2.getText().toString();
+			if (name5 != null) {
+				gotoWebDetail(1, name5);
+			}
 			break;
 			
 		case R.id.home_job:
-			gotoWebDetail(1);
+			String name6 = careerTv1.getText().toString();
+			if (name6 != null) {
+				gotoWebDetail(1, name6);
+			}
 			break;
 			
 		case R.id.home_job_2:
-			gotoWebDetail(1);
+			String name7 = careerTv2.getText().toString();
+			if (name7 != null) {
+				gotoWebDetail(1, name7);
+			}
 			break;
 		default:
 			break;
 		}
 	}
 	
-	private void gotoWebDetail(int flag){
+	private void gotoWebDetail(int flag, String name){
 		Intent intent = new Intent(getActivity(), InsuranceDetailActivity.class);
 		intent.putExtra("flag", flag);
+		intent.putExtra("name", name);
 		startActivity(intent);
 	}
 

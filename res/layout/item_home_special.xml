@@ -46,6 +46,7 @@
             
             android:src="@drawable/lvyou"/>
         <TextView 
+            android:id="@+id/travel_tv1"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:text="慧择网旅游保险在线投保,价格优惠,方便快捷,是旅游险网上投保的最佳平台"
@@ -70,6 +71,7 @@
             
             android:src="@drawable/lvyou2"/>
         <TextView 
+            android:id="@+id/travel_tv2"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:text="旅游保险网 - 专注旅游保险服务15年"
