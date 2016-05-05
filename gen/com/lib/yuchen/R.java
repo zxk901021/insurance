@@ -16,11 +16,11 @@ public final class R {
 		public static final int load_logo = 0x7f020098;
 	}
 	public static final class id {
-		public static final int RelativeLayout1 = 0x7f0800cf;
+		public static final int RelativeLayout1 = 0x7f0800d1;
 		public static final int imageView1 = 0x7f080017;
 		public static final int progressBar1 = 0x7f080043;
-		public static final int textView1 = 0x7f080086;
-		public static final int textView2 = 0x7f080085;
+		public static final int textView1 = 0x7f080088;
+		public static final int textView2 = 0x7f080087;
 	}
 	public static final class layout {
 		public static final int custom_notify = 0x7f030022;

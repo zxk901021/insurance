@@ -18,9 +18,11 @@ import com.example.market.activity.MainActivity;
 import com.example.market.activity.ShakeActivity;
 import com.example.market.activity.WebActivity;
 import com.example.market.bean.Goods;
+import com.example.market.bean.Insurance;
 import com.example.market.utils.Constants;
 import com.lib.volley.HTTPUtils;
 import com.lib.volley.VolleyListener;
+import com.zhy_9.shopping_mall.adapter.CollectAdapter;
 import com.zhy_9.shopping_mall.adapter.GoodsGridViewAdapter;
 import com.zhy_9.shopping_mall.widget.InternalGridView;
 
@@ -57,6 +59,11 @@ public class FindFragment extends Fragment implements OnClickListener {
 
 	private GoodsGridViewAdapter adapter;
 	
+	private ListView searchList;
+	private CollectAdapter colAdapter;
+	private List<Insurance> list;
+	private String[] names = new String[]{"幼儿生病保险","子女上学基金","老年意外险","老年重大疾病险","旅游意外险","旅游意外身亡险","意外失业险"};
+	
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -70,6 +77,15 @@ public class FindFragment extends Fragment implements OnClickListener {
 		searchBtn = (ImageView) layout.findViewById(R.id.search_btn);
 		searchResultGrid = (InternalGridView) layout
 				.findViewById(R.id.search_result_list);
+		searchList = (ListView) layout.findViewById(R.id.search_list);
+		list = new ArrayList<Insurance>();
+		for (int i = 0; i < names.length; i++) {
+			Insurance ins = new Insurance();
+			ins.setName(names[i]);
+			list.add(ins);
+		}
+		colAdapter = new CollectAdapter(getActivity(), list);
+		searchList.setAdapter(colAdapter);
 		searchBtn.setOnClickListener(this);
 		searchResultGrid.setOnItemClickListener(new OnItemClickListener() {
 
@@ -121,6 +137,7 @@ public class FindFragment extends Fragment implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.search_btn:
+			searchList.setVisibility(View.VISIBLE);
 			searchContent = searchEdt.getText().toString();
 			if (!TextUtils.isEmpty(searchContent)) {
 				startToSearch();

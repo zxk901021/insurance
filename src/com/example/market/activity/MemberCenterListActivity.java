@@ -44,6 +44,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MemberCenterListActivity extends Activity implements
 		OnClickListener {
@@ -70,6 +71,7 @@ public class MemberCenterListActivity extends Activity implements
 	private InsuranceSQLiteDatabase db;
 	private CollectAdapter collectAdapter;
 	private List<Insurance> collectData;
+	private Button submit;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +96,14 @@ public class MemberCenterListActivity extends Activity implements
 		title = (TextView) findViewById(R.id.member_info_list_title);
 		goodsGrid = (InternalGridView) findViewById(R.id.member_info_gridview);
 		collectList = (ListView) findViewById(R.id.collect_list);
+		submit = (Button) findViewById(R.id.mes_btn);
+		submit.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(MemberCenterListActivity.this, "提交成功！", Toast.LENGTH_SHORT).show();
+			}
+		});
 		if (mode == 2) {
 			bottom.setVisibility(View.VISIBLE);
 		}
