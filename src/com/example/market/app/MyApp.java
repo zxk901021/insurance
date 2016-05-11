@@ -1,9 +1,6 @@
 package com.example.market.app;
 
-//import cn.jpush.android.api.JPushInterface;
 
-import com.activeandroid.ActiveAndroid;
-//import com.baidu.mapapi.SDKInitializer;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -22,17 +19,9 @@ public class MyApp extends Application {
 	public void onCreate() {
 		super.onCreate();
 		initImageLoader(this);
-		ActiveAndroid.initialize(this);
-		//初始化百度地图
-//		SDKInitializer.initialize(this);
-//		initJPush(); 
 		
 	}
 
-	private void initJPush() {
-//		JPushInterface.setDebugMode(true);	// 设置开启日志,发布时请关闭日志
-//        JPushInterface.init(this);     		// 初始化 JPush
-	}
 
 	public void initImageLoader(Context context) {
 		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)

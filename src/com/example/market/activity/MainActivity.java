@@ -12,9 +12,6 @@ import com.example.market.fragment.HomeFragment;
 import com.example.market.fragment.MineFragment;
 import com.example.market.fragment.CategoryFragment;
 import com.example.market.utils.Constants;
-import com.example.market.utils.DBUtils;
-import com.umeng.fb.FeedbackAgent;
-import com.zxing.activity.CaptureActivity;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -63,7 +60,6 @@ public class MainActivity extends FragmentActivity {
 		mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
 		mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
 		addTab();
-		initInCartNum();
 	}
 
 	@Override
@@ -97,18 +93,6 @@ public class MainActivity extends FragmentActivity {
 		unregisterReceiver(receiver);
 	}
 
-	/**
-	 * 购物车中商品数量
-	 */
-	private void initInCartNum() {
-		int num = DBUtils.getInCartNum();
-		if (num > 0) {
-			mTvNumInCart.setVisibility(View.VISIBLE);
-			mTvNumInCart.setText("" + num);
-		} else {
-			mTvNumInCart.setVisibility(View.INVISIBLE);
-		}
-	}
 
 	private void addTab() {
 		for (int i = 0; i < 5; i++) {
@@ -127,14 +111,6 @@ public class MainActivity extends FragmentActivity {
 		}
 	}
 
-	/**
-	 * 打开二维码扫描界面，用于给片段调用
-	 */
-	public void scanQRCode() {
-		// 打开扫描界面扫描条形码或二维码
-		Intent openCameraIntent = new Intent(this, CaptureActivity.class);
-		startActivityForResult(openCameraIntent, 0);
-	}
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -258,12 +234,6 @@ public class MainActivity extends FragmentActivity {
 		case 1: // 设置
 			startActivity(new Intent(this, MoreActivity.class));
 			break;
-		case 2: // 浏览记录
-			startActivity(new Intent(this, HistoryActivity.class));
-			break;
-		case 3: // 意见反馈
-			new FeedbackAgent(this).startFeedbackActivity();
-			break;
 		case 4: // 亮度调节
 			LightCtrlDialogFragment lightCtrlDialogFragment = new LightCtrlDialogFragment();
 			lightCtrlDialogFragment.show(getSupportFragmentManager(), null);
@@ -307,9 +277,7 @@ public class MainActivity extends FragmentActivity {
 					.getStringExtra(Constants.BROADCAST_FILTER.EXTRA_CODE);
 			if (extra.equals(Constants.INTENT_KEY.FROM_FAVOR)) {
 				isFromFavor = true;
-			} else if (extra.equals(Constants.INTENT_KEY.REFRESH_INCART)) {
-				initInCartNum();
-			} else if (extra.equals(Constants.INTENT_KEY.FROM_DETAIL)) {
+			}  else if (extra.equals(Constants.INTENT_KEY.FROM_DETAIL)) {
 				isFromDetail = true;
 			} else if (extra.equals(Constants.INTENT_KEY.LOGOUT)) {
 				isLogined = false;

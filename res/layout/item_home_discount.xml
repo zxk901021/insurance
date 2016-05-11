@@ -30,72 +30,55 @@
         android:text="更多"
         android:textColor="@color/black"
         android:textSize="@dimen/small_middle_text_size" />
-    
-    <LinearLayout 
+
+    <LinearLayout
         android:id="@+id/home_children"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_below="@id/hot_goods_more"
-        android:padding="6dp">
-        
-        <ImageView 
+        android:orientation="horizontal"
+        android:padding="6dp" >
+
+        <ImageView
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_weight="1"
-            
-            android:src="@drawable/ernv"/>
-        <TextView 
+            android:src="@drawable/ernv" />
+
+        <TextView
             android:id="@+id/child_tv1"
             android:layout_width="0dp"
             android:layout_height="80dp"
-            android:text="平安儿女宝宝险，成长之路首选"
+            android:layout_weight="3"
             android:gravity="center_vertical"
             android:paddingLeft="5dp"
-            android:layout_weight="3"
-            android:textColor="#000000"/>
+            android:text="平安儿女宝宝险，成长之路首选"
+            android:textColor="#000000" />
     </LinearLayout>
 
-    <LinearLayout 
+    <LinearLayout
         android:id="@+id/home_children_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_below="@id/home_children"
-        android:padding="6dp">
-        
-        <ImageView 
+        android:orientation="horizontal"
+        android:padding="6dp" >
+
+        <ImageView
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_weight="1"
-            
-            android:src="@drawable/ernvs"/>
-        <TextView 
+            android:src="@drawable/ernvs" />
+
+        <TextView
             android:id="@+id/child_tv2"
             android:layout_width="0dp"
             android:layout_height="80dp"
-            android:text="中国人寿少儿保险为孩子的成长教育提供保障"
+            android:layout_weight="3"
             android:gravity="center_vertical"
             android:paddingLeft="5dp"
-            android:layout_weight="3"
-            android:textColor="#000000"/>
+            android:text="中国人寿少儿保险为孩子的成长教育提供保障"
+            android:textColor="#000000" />
     </LinearLayout>
-
-    <com.zhy_9.shopping_mall.widget.InternalGridView 
-        android:id="@+id/home_page_hot_grid_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:horizontalSpacing="5dp"
-        android:numColumns="2"
-        android:verticalSpacing="5dp"
-        android:layout_below="@+id/tv_discount"
-        android:layout_marginTop="10dp"
-        android:listSelector="#00000000"
-        android:background="#ebeced"
-        android:padding="5dp"
-        android:visibility="gone">
-        
-    </com.zhy_9.shopping_mall.widget.InternalGridView>
 
 </RelativeLayout>

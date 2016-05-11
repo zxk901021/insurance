@@ -133,9 +133,6 @@ public class MoreActivity extends FragmentActivity implements OnClickListener {
 		case R.id.layout_clear_cache: // 清除缓存
 			clearCache();
 			break;
-		case R.id.layout_recom_apps: // 应用推荐
-			startActivity(new Intent(this, DownloadActivity.class));
-			break;
 		case R.id.btn_logout: // 注销
 			LogoutDialogFragment fragment = new LogoutDialogFragment();
 			fragment.show(getSupportFragmentManager(), null);

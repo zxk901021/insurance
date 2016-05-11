@@ -48,7 +48,6 @@ public class UserInfoActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_user_info);
 		initView();
-		initInfo();
 		widgetClick();
 	}
 
@@ -64,26 +63,6 @@ public class UserInfoActivity extends Activity implements OnClickListener {
 		confirmPasswordEdt = (EditText) findViewById(R.id.confirm_password_edt);
 	}
 
-	private void initInfo() {
-		sp = getSharedPreferences("MyPrefer", Context.MODE_PRIVATE);
-		uid = sp.getString("uid", "");
-		HTTPUtils.getVolley(UserInfoActivity.this, Constants.URL.USER_INFO
-				+ uid, new VolleyListener() {
-
-			@Override
-			public void onErrorResponse(VolleyError arg0) {
-
-			}
-
-			@Override
-			public void onResponse(String result) {
-				if (!TextUtils.isEmpty(result)) {
-					infoResult = result;
-					handler.sendEmptyMessage(1);
-				}
-			}
-		});
-	}
 
 	private void widgetClick() {
 		back.setOnClickListener(this);
@@ -112,53 +91,7 @@ public class UserInfoActivity extends Activity implements OnClickListener {
 			finish();
 			break;
 
-		case R.id.change_user_info:
-			initUploadValue();
-			Map<String, String> map = new HashMap<String, String>();
-			map.put("real_name", userName);
-			map.put("mobile_phone", phoneName);
-			map.put("email", email);
-			map.put("sex", sex);
-			map.put("birthday", birthday);
-			HTTPUtils.postVolley(UserInfoActivity.this,
-					Constants.URL.CHANGE_USER_INFO + uid, map,
-					new VolleyListener() {
 
-						@Override
-						public void onErrorResponse(VolleyError arg0) {
-
-						}
-
-						@Override
-						public void onResponse(String result) {
-							Log.e("change_info", result);
-						}
-					});
-			break;
-
-		case R.id.change_password_btn:
-			getPasswordValue();
-			Map<String, String> passMap = new HashMap<String, String>();
-			passMap.put("old_password", oldPassword);
-			passMap.put("new_password", newPassword);
-			passMap.put("uid", uid);
-			HTTPUtils.postVolley(UserInfoActivity.this,
-					Constants.URL.CHANGE_PASSWORD + uid, passMap,
-					new VolleyListener() {
-
-						@Override
-						public void onErrorResponse(VolleyError arg0) {
-
-						}
-
-						@Override
-						public void onResponse(String result) {
-							Log.e("changepass", result);
-							changePwdResult = result;
-							handler.sendEmptyMessage(2);
-						}
-					});
-			break;
 
 		default:
 			break;

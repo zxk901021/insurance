@@ -1,17 +1,9 @@
 package com.example.market.dialogfragment;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 
-import cn.bmob.v3.BmobUser;
 
 import com.example.market.R;
 import com.example.market.app.SysApplication;
-import com.sina.weibo.sdk.demo.AccessTokenKeeper;
-import com.sina.weibo.sdk.demo.Constants;
-import com.sina.weibo.sdk.exception.WeiboException;
-import com.sina.weibo.sdk.net.RequestListener;
-import com.sina.weibo.sdk.openapi.LogoutAPI;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,13 +14,11 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.Toast;
 
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
@@ -42,7 +32,6 @@ public class LogoutDialogFragment extends DialogFragment implements
 	private View divider;
 	private int logType;
 	/** 登出操作对应的listener */
-	private LogOutRequestListener mLogoutListener = new LogOutRequestListener();
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -101,29 +90,14 @@ public class LogoutDialogFragment extends DialogFragment implements
 	private void logout() {
 		dismiss();
 		switch (logType) {
-		case 1: // 通过Bmob注销
-			logoutBmob();
-			break;
-		case 2: // 通过微博注销
-			logoutWB();
-			break;
 
 		default:
 			break;
 		}
 	}
 
-	private void logoutWB() {
-		new LogoutAPI(mActivity, Constants.APP_KEY,
-				AccessTokenKeeper.readAccessToken(mActivity))
-				.logout(mLogoutListener);
-	}
+	
 
-	private void logoutBmob() {
-		BmobUser.logOut(mActivity);
-		anounceLogout();
-		Toast.makeText(mActivity, "已注销", Toast.LENGTH_SHORT).show();
-	}
 
 	/**
 	 * 发送广播注销
@@ -143,33 +117,5 @@ public class LogoutDialogFragment extends DialogFragment implements
 		mActivity.sendBroadcast(intent);
 	}
 
-	/**
-	 * 登出按钮的监听器，接收登出处理结果。（API 请求结果的监听器）
-	 */
-	private class LogOutRequestListener implements RequestListener {
-		@Override
-		public void onComplete(String response) {
-			if (!TextUtils.isEmpty(response)) {
-				try {
-					JSONObject obj = new JSONObject(response);
-					String value = obj.getString("result");
-
-					if ("true".equalsIgnoreCase(value)) {
-						AccessTokenKeeper.clear(mActivity);
-						Toast.makeText(mActivity, "已注销", Toast.LENGTH_SHORT)
-								.show();
-						anounceLogout();
-					}
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-
-		@Override
-		public void onWeiboException(WeiboException e) {
-			Toast.makeText(mActivity, "注销错误", Toast.LENGTH_SHORT).show();
-		}
-	}
 
 }

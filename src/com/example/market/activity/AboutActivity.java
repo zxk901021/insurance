@@ -27,9 +27,10 @@ public class AboutActivity extends Activity implements OnClickListener {
 			break;
 
 		case R.id.layout_upgrade:
-			Toast.makeText(AboutActivity.this, "已是最新版本！", Toast.LENGTH_SHORT).show();
+			Toast.makeText(AboutActivity.this, "已是最新版本！", Toast.LENGTH_SHORT)
+					.show();
 			break;
-			
+
 		default:
 			break;
 		}

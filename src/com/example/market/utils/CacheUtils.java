@@ -18,10 +18,6 @@ public final class CacheUtils {
 		File cachePath = new File(dataDir + "/" + context.getPackageName()
 				+ "/cache/uil-images");
 
-		// File cachePath = StorageUtils
-		// .getIndividualCacheDirectory(getActivity());
-		// Log.e("UIL", "cachePath: " + cachePath);
-
 		long fileLen = getFileLen(cachePath);
 		return formatStr(fileLen);
 	}

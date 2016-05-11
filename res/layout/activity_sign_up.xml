@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="手机快速注册"
+            android:text="快速注册"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="@dimen/medium_text_size" />
 
@@ -63,7 +63,7 @@
                 android:layout_marginRight="@dimen/item_margin_large"
                 android:layout_toRightOf="@+id/tv_uid"
                 android:background="@null"
-                android:hint="用户名/邮箱/手机号"
+                android:hint="用户名"
                 android:singleLine="true"
                 android:maxLength="32"
                 android:textSize="@dimen/small_middle_text_size" />

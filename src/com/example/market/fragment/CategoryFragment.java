@@ -10,12 +10,9 @@ import org.json.JSONObject;
 import com.android.volley.VolleyError;
 import com.example.market.R;
 import com.example.market.activity.InsuranceDetailActivity;
-import com.example.market.bean.CatId;
-import com.example.market.bean.CategoryModel;
 import com.example.market.utils.Constants;
 import com.lib.volley.HTTPUtils;
 import com.lib.volley.VolleyListener;
-import com.zhy_9.shopping_mall.adapter.CategoryListAdapter;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,9 +34,7 @@ public class CategoryFragment extends Fragment implements OnClickListener{
 
 	private String categoryResult;
 
-	private List<CategoryModel> data;
 
-	private CategoryListAdapter adapter;
 
 	private View layout;
 	
@@ -73,20 +68,6 @@ public class CategoryFragment extends Fragment implements OnClickListener{
 		categoryList = (ListView) getActivity()
 				.findViewById(R.id.category_list);
 
-		HTTPUtils.getVolley(getActivity(), Constants.URL.SITE_URL
-				+ Constants.URL.CATEGORY, new VolleyListener() {
-
-			@Override
-			public void onErrorResponse(VolleyError arg0) {
-
-			}
-
-			@Override
-			public void onResponse(String result) {
-				categoryResult = result;
-				handler.sendEmptyMessage(1);
-			}
-		});
 	}
 
 	@Override
@@ -97,50 +78,6 @@ public class CategoryFragment extends Fragment implements OnClickListener{
 		parent.removeView(layout);
 	}
 
-	Handler handler = new Handler() {
-		public void handleMessage(android.os.Message msg) {
-			switch (msg.what) {
-			case 1:
-				data = new ArrayList<CategoryModel>();
-				try {
-					JSONArray ar = new JSONArray(categoryResult);
-					Log.e("arr", ar.toString());
-					int len = ar.length();
-					for (int i = 0; i < len; i++) {
-						CategoryModel model = new CategoryModel();
-						JSONObject ob = ar.getJSONObject(i);
-						model.setName(ob.getString("name"));
-						model.setId(ob.getString("id"));
-						String catId = ob.getString("cat_id");
-						if (!TextUtils.isEmpty(catId)) {
-							JSONArray array = ob.getJSONArray("cat_id");
-							List<CatId> list = new ArrayList<CatId>();
-							for (int j = 0; j < array.length(); j++) {
-
-								CatId categoryModel = new CatId();
-								categoryModel.setName(array.getJSONObject(j)
-										.getString("name"));
-								categoryModel.setId(array.getJSONObject(j)
-										.getString("id"));
-								list.add(categoryModel);
-							}
-							model.setList(list);
-						}
-						data.add(model);
-					}
-					adapter = new CategoryListAdapter(data, getActivity());
-					categoryList.setAdapter(adapter);
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
-
-				break;
-
-			default:
-				break;
-			}
-		};
-	};
 	
 	private void gotoWebDetail(int flag){
 		Intent intent = new Intent(getActivity(), InsuranceDetailActivity.class);

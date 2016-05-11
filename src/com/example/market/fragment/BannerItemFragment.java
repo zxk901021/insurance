@@ -1,8 +1,6 @@
 package com.example.market.fragment;
 
 import com.example.market.R;
-import com.example.market.activity.DetailActivity;
-import com.example.market.bean.GoodsInfo;
 import com.example.market.utils.Constants;
 
 import android.content.Intent;
@@ -24,7 +22,6 @@ public class BannerItemFragment extends Fragment implements OnClickListener {
 	private int position;
 	private ImageView mImageView;
 	private int imageRes;
-	private GoodsInfo goodsInfo;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,15 +40,7 @@ public class BannerItemFragment extends Fragment implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		if (goodsInfo != null) {
-			Intent intent = new Intent(getActivity(), DetailActivity.class);
-			intent.putExtra(Constants.INTENT_KEY.INFO_TO_DETAIL, goodsInfo);
-			startActivity(intent);
-		}
 	}
 
-	public void setGoodsInfo(GoodsInfo goodsInfo) {
-		this.goodsInfo = goodsInfo;
-	}
 
 }

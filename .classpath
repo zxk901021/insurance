@@ -3,13 +3,7 @@
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
-	<classpathentry kind="src" path="/SwipeMenuListView"/>
-	<classpathentry kind="src" path="/WeiboSDK"/>
-	<classpathentry kind="src" path="/lib_GridViewWithHeaderAndFooter"/>
-	<classpathentry kind="src" path="/lib_baidumap_location_for_jd"/>
-	<classpathentry kind="src" path="/lib_PhotoView"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="src" path="/lib_umeng_feedback"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

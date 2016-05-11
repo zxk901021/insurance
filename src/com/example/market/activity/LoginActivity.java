@@ -9,16 +9,11 @@ import org.json.JSONObject;
 import cn.bmob.v3.listener.SaveListener;
 
 import com.android.volley.VolleyError;
-import com.example.bmob.signup.JDUser;
 import com.example.bmob.signup.SignUpActivity;
 import com.example.market.R;
 import com.example.market.utils.Constants;
 import com.lib.volley.HTTPUtils;
 import com.lib.volley.VolleyListener;
-import com.sina.weibo.sdk.auth.AuthInfo;
-import com.sina.weibo.sdk.auth.Oauth2AccessToken;
-import com.sina.weibo.sdk.auth.sso.SsoHandler;
-import com.sina.weibo.sdk.openapi.UsersAPI;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -60,18 +55,6 @@ public class LoginActivity extends Activity implements OnClickListener,
 	/** 通过微博登录 */
 	private final int LOG_BY_WEIBO = 2;
 
-	/** 显示认证后的信息，如 AccessToken */
-	private AuthInfo mAuthInfo;
-
-	/** 封装了 "access_token"，"expires_in"，"refresh_token"，并提供了他们的管理功能 */
-	private Oauth2AccessToken mAccessToken;
-
-	/** 注意：SsoHandler 仅当 SDK 支持 SSO 时有效 */
-	private SsoHandler mSsoHandler;
-
-	/** 用户信息接口 */
-	private UsersAPI mUsersAPI;
-	
 	private String loginsResult;
 
 	@Override
@@ -182,6 +165,9 @@ public class LoginActivity extends Activity implements OnClickListener,
 						ed.commit();
 						finish();
 					}
+					else {
+						Toast.makeText(LoginActivity.this, "登录失败！！", Toast.LENGTH_SHORT).show();
+					}
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}
@@ -263,11 +249,6 @@ public class LoginActivity extends Activity implements OnClickListener,
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 
-		// SSO 授权回调
-		// 重要：发起 SSO 登陆的 Activity 必须重写 onActivityResult
-		if (mSsoHandler != null) {
-			mSsoHandler.authorizeCallBack(requestCode, resultCode, data);
-		}
 	}
 
 	/**
@@ -301,87 +282,8 @@ public class LoginActivity extends Activity implements OnClickListener,
 		map.put("username", userName);
 		map.put("password", pwd);
 
-		HTTPUtils.postVolley(LoginActivity.this,
-				com.example.market.utils.Constants.URL.SITE_URL
-						+ com.example.market.utils.Constants.URL.LOGIN, map,
-				new VolleyListener() {
-
-					@Override
-					public void onErrorResponse(VolleyError arg0) {
-
-					}
-
-					@Override
-					public void onResponse(String result) {
-						loginResult = result;
-						try {
-							JSONObject ob = new JSONObject(loginResult);
-							String isSucess = ob.getString("ok");
-							Log.e("ob", ob.toString());
-							if (isSucess.equals("0")) {
-								Toast.makeText(LoginActivity.this, "登陆失败",
-										Toast.LENGTH_SHORT).show();
-							} else if (isSucess.equals("1")) {
-								Toast.makeText(LoginActivity.this, "登陆成功",
-										Toast.LENGTH_SHORT).show();
-								String uid = ob.getString("user_id");
-								SharedPreferences sp = getSharedPreferences(
-										"MyPrefer", Context.MODE_PRIVATE);
-								Editor ed = sp.edit();
-								ed.putString("uid", uid);
-								ed.putBoolean("isLogin", true);
-								ed.commit();
-								Intent intent = new Intent();
-								intent.putExtra("uid", uid);
-								setResult(1024, intent);
-								finish();
-							}
-						} catch (JSONException e) {
-							e.printStackTrace();
-						}
-
-					}
-				});
 	}
 
-	/**
-	 * 登录按钮
-	 */
-	private void login() {
-		String userName = mEditUid.getText().toString();
-		String pwd = mEditPsw.getText().toString();
-
-		final JDUser user = new JDUser();
-		user.setUsername(userName);
-		user.setPassword(pwd);
-		user.login(this, new SaveListener() {
-			public void onSuccess() {
-				// 将用户名保存到Preference
-				SharedPreferences sp = getPreferences(Context.MODE_PRIVATE);
-				Editor edit = sp.edit();
-				edit.putString("uid", mEditUid.getText().toString());
-				edit.commit();
-
-				String id2 = user.getObjectId();
-				Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT)
-						.show();
-				// 通过Bmob登录
-				setSP(LOG_BY_BMOB);
-				Intent intent = new Intent();
-				intent.putExtra("uid", id2);
-				setResult(
-						com.example.market.utils.Constants.INTENT_KEY.LOGIN_RESULT_SUCCESS_CODE,
-						intent);
-				LoginActivity.this.finish();
-
-			}
-
-			public void onFailure(int arg0, String arg1) {
-				Toast.makeText(LoginActivity.this, "用户名或密码错误",
-						Toast.LENGTH_LONG).show();
-			}
-		});
-	}
 
 	/**
 	 * 是否显示密码

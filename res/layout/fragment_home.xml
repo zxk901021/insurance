@@ -72,7 +72,6 @@
                         android:id="@+id/layout_home_banner"
                         layout="@layout/fragment_banner" />
 
-                    <include layout="@layout/items_home_center_menu" />
 
                     <include layout="@layout/item_home_discount" />
 
@@ -86,14 +85,5 @@
         </android.support.v4.widget.SwipeRefreshLayout>
     </RelativeLayout>
 
-    <FrameLayout
-        android:id="@+id/home_slide_frame"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@color/white" >
-
-        <include layout="@layout/home_page_drawer_layout" />
-    </FrameLayout>
 
 </android.support.v4.widget.DrawerLayout>

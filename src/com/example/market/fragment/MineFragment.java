@@ -116,7 +116,6 @@ public class MineFragment extends Fragment implements OnClickListener {
 	private void setOnListener() {
 		layout.findViewById(R.id.layout_mine_order).setOnClickListener(this);
 		layout.findViewById(R.id.layout_mine_wallet).setOnClickListener(this);
-		layout.findViewById(R.id.layout_mine_messages).setOnClickListener(this);
 		layout.findViewById(R.id.personal_login_button)
 				.setOnClickListener(this);
 		layout.findViewById(R.id.layout_mine_collects).setOnClickListener(this);
@@ -126,10 +125,6 @@ public class MineFragment extends Fragment implements OnClickListener {
 		layout.findViewById(R.id.tv_more).setOnClickListener(this);
 		layout.findViewById(R.id.person_center_get_tihuoquan).setOnClickListener(this);
 		layout.findViewById(R.id.person_center_next).setOnClickListener(this);
-		layout.findViewById(R.id.person_center_delivery_address)
-				.setOnClickListener(this);
-		layout.findViewById(R.id.person_center_shoping_cart_layout)
-				.setOnClickListener(this);
 		layout.findViewById(R.id.person_center_quit_layout).setOnClickListener(
 				this);
 		scroll = (ScrollView) layout.findViewById(R.id.scrollView_mine);
@@ -148,8 +143,6 @@ public class MineFragment extends Fragment implements OnClickListener {
 		userHeaderView = (ImageView) layout.findViewById(R.id.user_icon);
 		userName = (TextView) layout.findViewById(R.id.tv_uid);
 		isManager = (TextView) layout.findViewById(R.id.tv_level);
-		deliveryAdress = (LinearLayout) layout
-				.findViewById(R.id.person_center_delivery_address);
 	}
 
 	@Override
@@ -190,29 +183,10 @@ public class MineFragment extends Fragment implements OnClickListener {
 				MainActivity activity = (MainActivity) getActivity();
 				activity.setIsLogined(true, uid, icon);
 			} else if (resultCode == 1024) {
-				SharedPreferences sp = getActivity().getSharedPreferences(
-						"MyPrefer", Context.MODE_PRIVATE);
-				String uid = sp.getString("uid", "");
-				HTTPUtils.getVolley(getActivity(), Constants.URL.USER_INFO
-						+ uid, new VolleyListener() {
-
-					@Override
-					public void onErrorResponse(VolleyError arg0) {
-
-					}
-
-					@Override
-					public void onResponse(String result) {
-						userInfo = result;
-						handler.sendEmptyMessage(1);
-					}
-				});
 				mViewNotLogined.setVisibility(View.GONE);
 				mViewLogined.setVisibility(View.VISIBLE);
 			}
-		} else if (requestCode == Constants.INTENT_KEY.REQUEST_MOREACTIVITY) {
-			initLogin();
-		}
+		} 
 	}
 
 	@Override
@@ -236,13 +210,7 @@ public class MineFragment extends Fragment implements OnClickListener {
 			intent.setClass(getActivity(), PurseActivity.class);
 			startActivity(intent);
 			break;
-		case R.id.layout_mine_messages: // 我的退换货
-			intent.setClass(getActivity(), MemberCenterListActivity.class);
-			intent.putExtra("mode", MY_EXCHANGE);
-			startActivity(intent);
-			break;
 		case R.id.layout_mine_collects: // 我的订单
-			// startActivity(new Intent(getActivity(), FavorActivity.class));
 			intent.setClass(getActivity(), MemberCenterListActivity.class);
 			intent.putExtra("mode", MY_ORDER);
 			startActivity(intent);
@@ -266,30 +234,11 @@ public class MineFragment extends Fragment implements OnClickListener {
 		case R.id.person_center_next: // 呼叫客服
 
 			intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"
-					+ "58883222"));
+					+ "95511"));
 			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(intent);
 		
 
-			// SharedPreferences sp = getActivity().getSharedPreferences(
-			// "MyPrefer", Context.MODE_PRIVATE);
-			// String uid = sp.getString("uid", null);
-			// Log.e("uid", uid);
-			// Map<String, String> map = new HashMap<String, String>();
-			// map.put("user_id", uid);
-			// HTTPUtils.postVolley(getActivity(), Constants.URL.SITE_URL
-			// + Constants.URL.CHECK_VIP, map, new VolleyListener() {
-			//
-			// @Override
-			// public void onErrorResponse(VolleyError arg0) {
-			//
-			// }
-			//
-			// @Override
-			// public void onResponse(String result) {
-			// Log.e("vip", result);
-			// }
-			// });
 			break;
 		case R.id.person_center_get_tihuoquan:
 			NotificationUtil.notificationMethod(getActivity());
@@ -305,40 +254,8 @@ public class MineFragment extends Fragment implements OnClickListener {
 			scroll.scrollTo(0, 0);
 			break;
 
-		case R.id.person_center_shoping_cart_layout:
-			MainActivity activity = (MainActivity) getActivity();
-			activity.activeCart();
-			// intent.setClass(getActivity(), MemberCenterListActivity.class);
-			// intent.putExtra("mode", MY_CART);
-			// startActivity(intent);
-			break;
-
-		case R.id.person_center_delivery_address:// 收货地址
-			intent.setClass(getActivity(), MemberCenterListActivity.class);
-			intent.putExtra("mode", 2);
-			startActivity(intent);
-			break;
-
 		default:
 			break;
-		// case R.id.layout_mine_account_center: // 账户与安全
-		// Intent intent4 = new Intent(getActivity(), WebActivity.class);
-		// intent4.putExtra("direction", 12);
-		// startActivity(intent4);
-		// break;
-		// case R.id.layout_mine_service_manager: // 服务管家
-		// Intent intent5 = new Intent(getActivity(), WebActivity.class);
-		// intent5.putExtra("direction", 10);
-		// startActivity(intent5);
-		// break;
-		// case R.id.layout_mine_feedback: // 意见反馈
-		// new FeedbackAgent(getActivity()).startFeedbackActivity();
-		// break;
-		// case R.id.layout_mine_android_my_jd_assitant: // 贴心服务
-		// Intent intent = new Intent(getActivity(), WebActivity.class);
-		// intent.putExtra("direction", 5);
-		// startActivity(intent);
-		// break;
 
 		}
 	}
